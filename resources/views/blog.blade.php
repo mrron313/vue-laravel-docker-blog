@@ -2,12 +2,9 @@
 
 @section('content')
 <div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-12">
-            <div id="app">
-                <blog-component />
-            </div>
-        </div>
+    <div id="app" class="row">
+        <blog-component />
+        <sidebar-component />
     </div>
 </div>
 @endsection

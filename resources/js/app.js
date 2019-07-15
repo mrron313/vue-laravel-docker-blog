@@ -1,9 +1,12 @@
 
 require('./bootstrap');
+import BootstrapVue from 'bootstrap-vue'
 
 window.Vue = require('vue');
-Vue.component('example-component', require('./components/ExampleComponent.vue').default);
+Vue.component('sidebar-component', require('./components/SidebarComponent.vue').default);
 Vue.component('blog-component', require('./components/BlogComponent.vue').default);
+
+Vue.use(BootstrapVue)
 
 const app = new Vue({
     el: '#app',
