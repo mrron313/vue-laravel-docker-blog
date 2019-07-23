@@ -2,9 +2,8 @@
 
 @section('content')
 <div class="container">
-    <div id="app" class="row">
+    <div id="app">
         <blog-component />
-        <sidebar-component />
     </div>
 </div>
 @endsection

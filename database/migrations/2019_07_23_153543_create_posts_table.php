@@ -19,6 +19,8 @@ class CreatePostsTable extends Migration
             $table->text('body');
             $table->unsignedInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->unsignedInteger('category_id');
+            $table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade');
             $table->integer('approved')->default(0);
             $table->timestamps();
         });
@@ -31,6 +33,8 @@ class CreatePostsTable extends Migration
      */
     public function down()
     {
+        Schema::disableForeignKeyConstraints();
         Schema::dropIfExists('posts');
+        Schema::enableForeignKeyConstraints();
     }
 }

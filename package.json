@@ -24,6 +24,7 @@
         "vue-template-compiler": "^2.6.10"
     },
     "dependencies": {
-        "bootstrap-vue": "^2.0.0-rc.26"
+        "bootstrap-vue": "^2.0.0-rc.26",
+        "laravel-vue-pagination": "^2.3.0"
     }
 }
