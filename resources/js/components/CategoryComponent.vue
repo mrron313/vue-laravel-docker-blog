@@ -44,7 +44,7 @@ export default {
         }
     },
 
-    mounted() {
+    created() {
       this.fetchData()
     },
 
@@ -54,7 +54,7 @@ export default {
 
     methods:{
         fetchData(page=1){
-            axios.get('/api/posts?page=' + page)
+            axios.get('/api/posts/categories/' + this.$route.params.id +'?page=' + page)
                 .then((response) => {
                     this.posts = response.data.data
                     this.loading = false
