@@ -1,10 +1,12 @@
 <?php
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('frontend.blog');
 });
 
 Auth::routes(['verify' => true]);
 
-
+Route::get('/dashboard', function () {
+    return view('backend.dashboard');
+});
 

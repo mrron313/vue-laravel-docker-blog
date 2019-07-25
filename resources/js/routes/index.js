@@ -1,9 +1,9 @@
 
 import VueRouter from 'vue-router'
 import Vue from 'vue'
-import BlogComponent from '../components/BlogComponent.vue'
-import CategoryComponent from '../components/CategoryComponent.vue'
-import SinglePostComponent from '../components/SinglePostComponent.vue'
+import BlogComponent from '../pages/BlogComponent.vue'
+import CategoryComponent from '../pages/CategoryComponent.vue'
+import SinglePostComponent from '../pages/SinglePostComponent.vue'
 
 Vue.use(VueRouter)
 
