@@ -12,14 +12,15 @@ import PasswordChangeComponent from '../pages/PasswordChangeComponent.vue'
 Vue.use(VueRouter)
 
 export default new VueRouter({
+  mode: 'history',
   routes:[
     {
-      path: '/',
+      path: '/blog',
       name: 'blog-component',
       component: BlogComponent
     },
     {
-      path: '/categories/:id',
+      path: '/blog/categories/:id',
       name: 'category-post-component',
       component: CategoryComponent
     },

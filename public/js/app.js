@@ -67194,7 +67194,7 @@ var render = function() {
               _c(
                 "li",
                 [
-                  _c("router-link", { attrs: { to: "/categories/1" } }, [
+                  _c("router-link", { attrs: { to: "/blog/categories/1" } }, [
                     _vm._v("JavaScript")
                   ])
                 ],
@@ -67204,7 +67204,7 @@ var render = function() {
               _c(
                 "li",
                 [
-                  _c("router-link", { attrs: { to: "/categories/2" } }, [
+                  _c("router-link", { attrs: { to: "/blog/categories/2" } }, [
                     _vm._v("Web Design")
                   ])
                 ],
@@ -67214,7 +67214,7 @@ var render = function() {
               _c(
                 "li",
                 [
-                  _c("router-link", { attrs: { to: "/categories/3" } }, [
+                  _c("router-link", { attrs: { to: "/blog/categories/3" } }, [
                     _vm._v("HTML")
                   ])
                 ],
@@ -67224,7 +67224,7 @@ var render = function() {
               _c(
                 "li",
                 [
-                  _c("router-link", { attrs: { to: "/categories/4" } }, [
+                  _c("router-link", { attrs: { to: "/blog/categories/4" } }, [
                     _vm._v("CSS")
                   ])
                 ],
@@ -67234,7 +67234,7 @@ var render = function() {
               _c(
                 "li",
                 [
-                  _c("router-link", { attrs: { to: "/categories/5" } }, [
+                  _c("router-link", { attrs: { to: "/blog/categories/5" } }, [
                     _vm._v("Tutorials")
                   ])
                 ],
@@ -67244,7 +67244,7 @@ var render = function() {
               _c(
                 "li",
                 [
-                  _c("router-link", { attrs: { to: "/categories/6" } }, [
+                  _c("router-link", { attrs: { to: "/blog/categories/6" } }, [
                     _vm._v("Freebies")
                   ])
                 ],
@@ -83309,12 +83309,13 @@ __webpack_require__.r(__webpack_exports__);
 
 vue__WEBPACK_IMPORTED_MODULE_1___default.a.use(vue_router__WEBPACK_IMPORTED_MODULE_0__["default"]);
 /* harmony default export */ __webpack_exports__["default"] = (new vue_router__WEBPACK_IMPORTED_MODULE_0__["default"]({
+  mode: 'history',
   routes: [{
-    path: '/',
+    path: '/blog',
     name: 'blog-component',
     component: _pages_BlogComponent_vue__WEBPACK_IMPORTED_MODULE_2__["default"]
   }, {
-    path: '/categories/:id',
+    path: '/blog/categories/:id',
     name: 'category-post-component',
     component: _pages_CategoryComponent_vue__WEBPACK_IMPORTED_MODULE_3__["default"]
   }, {

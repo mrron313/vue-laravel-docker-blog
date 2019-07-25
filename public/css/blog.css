@@ -1,4 +1,30 @@
+body{
+    background-color: #ffffff
+}
+
 .navbar-brand img{
     width: 18%;
     margin-right: 4px;
+}
+
+.nav-item{
+    text-align: right
+}
+
+.not-avatar{
+    position: relative;
+    top: 15px;
+}
+
+.nav-item a img {
+    width: 50%;
+    text-align: right;
+}
+
+.avatar{
+    width: 70%;
+}
+
+main{
+    margin-top: 10px !important;
 }

@@ -9,22 +9,22 @@
                     <div class="col-lg-6">
                         <ul class="list-unstyled mb-0">
                             <li>
-                                <router-link to="/categories/1">JavaScript</router-link>
+                                <router-link to="/blog/categories/1">JavaScript</router-link>
                             </li>
                             <li>
-                                <router-link to="/categories/2">Web Design</router-link>
+                                <router-link to="/blog/categories/2">Web Design</router-link>
                             </li>
                             <li>
-                                <router-link to="/categories/3">HTML</router-link>
+                                <router-link to="/blog/categories/3">HTML</router-link>
                             </li>
                             <li>
-                                <router-link to="/categories/4">CSS</router-link>
+                                <router-link to="/blog/categories/4">CSS</router-link>
                             </li>
                             <li>
-                                <router-link to="/categories/5">Tutorials</router-link>
+                                <router-link to="/blog/categories/5">Tutorials</router-link>
                             </li>
                             <li>
-                                <router-link to="/categories/6">Freebies</router-link>
+                                <router-link to="/blog/categories/6">Freebies</router-link>
                             </li>
                             <li>
                                 <router-link to="/">All</router-link>
