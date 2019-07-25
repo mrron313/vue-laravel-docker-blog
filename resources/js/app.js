@@ -17,6 +17,16 @@ Vue.component('category-component', CategoryComponent);
 Vue.component('sidebar-component', SidebarComponent);
 Vue.component('pagination', require('laravel-vue-pagination'));
 
+var filter = function(text, length, clamp){
+  clamp = clamp || '...';
+  var node = document.createElement('div');
+  node.innerHTML = text;
+  var content = node.textContent;
+  return content.length > length ? content.slice(0, length) + clamp : content;
+};
+
+Vue.filter('truncate', filter);
+
 const app = new Vue({
   el: '#app',
   router

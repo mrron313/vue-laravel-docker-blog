@@ -17,6 +17,15 @@ class PostController extends Controller
         ], 200);
     }
 
+    public function show($postId)
+    {
+        $post = Post::with('user:id,name')->with('category:id,name')->where('id', $postId)->first();
+        
+        return response()->json([
+            'data' => $post
+        ], 200); 
+    }
+
     public function categories($categoryId)
     {
         $posts = Post::where('category_id', $categoryId)->with('user:id,name')->with('category:id,name')->paginate(5);
