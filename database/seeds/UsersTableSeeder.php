@@ -11,6 +11,18 @@ class UsersTableSeeder extends Seeder
      */
     public function run()
     {
+
+        DB::table('users')->insert(array(
+            array(
+              'name' => 'admin',
+              'email' => 'admin@techblog.com',
+              'email_verified_at' => now(),
+              'role' => 1,
+              'password' => '$2y$10$/jovDsXVDLPktHAwnlmQzurKo.3Gx3DNhy7oIzXfdJqffCQoyT7xi', // password
+              'remember_token' => Str::random(10),
+            ),
+          ));
+
         factory(App\Models\User::class, 50)->create();
     }
 }
