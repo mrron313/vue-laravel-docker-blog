@@ -67253,7 +67253,9 @@ var render = function() {
               _vm._v(" "),
               _c(
                 "li",
-                [_c("router-link", { attrs: { to: "/" } }, [_vm._v("All")])],
+                [
+                  _c("router-link", { attrs: { to: "/blog" } }, [_vm._v("All")])
+                ],
                 1
               )
             ])
@@ -83361,8 +83363,8 @@ vue__WEBPACK_IMPORTED_MODULE_1___default.a.use(vue_router__WEBPACK_IMPORTED_MODU
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /var/www/blog/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /var/www/blog/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /opt/lampp/htdocs/vue-laravel-blog/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /opt/lampp/htdocs/vue-laravel-blog/resources/sass/app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

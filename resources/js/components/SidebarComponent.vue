@@ -27,7 +27,7 @@
                                 <router-link to="/blog/categories/6">Freebies</router-link>
                             </li>
                             <li>
-                                <router-link to="/">All</router-link>
+                                <router-link to="/blog">All</router-link>
                             </li>
                         </ul>
                     </div>
