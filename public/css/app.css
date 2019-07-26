@@ -10642,10 +10642,10 @@ a.text-dark:focus {
     color: inherit;
     border-color: #dee2e6;
   }
-}nav-item avatar dropdown
-nav-item avatar dropdown
-.navbanav-item avatar dropdownr-laravel {
-  backnav-item avatar dropdownground-color: #fff;
+}
+
+.navbar-laravel {
+  background-color: #fff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
 }
 

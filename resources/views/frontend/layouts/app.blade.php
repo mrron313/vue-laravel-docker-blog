@@ -36,11 +36,14 @@
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
-                    <!-- Right Side Of Navbar -->
-                    <ul class="navbar-nav ml-auto nav-flex-icons">
-                        <li class="nav-item not-avatar">
+                    <!-- Left Side Of Navbar -->	
+                    <ul class="navbar-nav mr-auto">	
+                        <li class="nav-item">
                             <a class="nav-link" href="{{ route('blog') }}">Blog</a>
                         </li>
+                     </ul>
+                    <!-- Right Side Of Navbar -->
+                    <ul class="navbar-nav ml-auto nav-flex-icons">
                         <!-- Authentication Links -->
                         @guest
                             <li class="nav-item">
@@ -57,7 +60,7 @@
                                     {{ Auth::user()->name }} <span class="caret"></span>
                                 </a> --}}
 
-                                <a class="nav-link dropdown-toggle" id="navbarDropdown" data-toggle="dropdown"
+                                <a class="nav-link" id="navbarDropdown" data-toggle="dropdown"
                                     aria-haspopup="true" aria-expanded="false">
                                     <img src="https://mdbootstrap.com/img/Photos/Avatars/avatar-2.jpg" class="rounded-circle z-depth-0"
                                     alt="avatar image">
@@ -84,6 +87,15 @@
         <main>
             @yield('content')
         </main>
+
+        <!-- Footer -->
+        <footer class="py-5 bg-dark">
+          <div class="container">
+            <p class="m-0 text-center text-white">Copyright &copy; Your Website 2019</p>
+          </div>
+          <!-- /.container -->
+        </footer>
+        
     </div>
 </body>
 </html>
