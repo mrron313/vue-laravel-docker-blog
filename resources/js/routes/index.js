@@ -5,7 +5,7 @@ import BlogComponent from '../pages/BlogComponent.vue'
 import CategoryComponent from '../pages/CategoryComponent.vue'
 import SinglePostComponent from '../pages/SinglePostComponent.vue'
 import CreatePostComponent from '../pages/CreatePostComponent.vue'
-import MyPostComponent from '../pages/MyPostComponent.vue'
+import SingleUserPostComponent from '../pages/SingleUserPostComponent.vue'
 import MyProfileComponent from '../pages/MyProfileComponent.vue'
 import PasswordChangeComponent from '../pages/PasswordChangeComponent.vue'
 
@@ -15,12 +15,12 @@ export default new VueRouter({
   mode: 'history',
   routes:[
     {
-      path: '/blog',
+      path: '/posts',
       name: 'blog-component',
       component: BlogComponent
     },
     {
-      path: '/blog/categories/:id',
+      path: '/posts/categories/:id',
       name: 'category-post-component',
       component: CategoryComponent
     },
@@ -30,14 +30,9 @@ export default new VueRouter({
       component: SinglePostComponent
     },
     {
-      path: '/create-post',
-      name: 'create-post-component',
-      component: CreatePostComponent
-    },
-    {
-      path: '/my-posts',
-      name: 'my-post-component',
-      component: MyPostComponent
+      path: '/user-posts/:user_name',
+      name: 'single-user-post-component',
+      component: SingleUserPostComponent
     },
     {
       path: '/change-password',
@@ -48,6 +43,11 @@ export default new VueRouter({
       path: '/my-profile',
       name: 'my-profile-component',
       component: MyProfileComponent
-    }
+    },
+    {
+      path: '/create-posts',
+      name: 'create-post-component',
+      component: CreatePostComponent
+    },
   ]
 })

@@ -3,6 +3,10 @@
     <div class="row">
         <div class="col-md-8">
 
+            <div v-if="isMyPost == true">
+                <h2>My Posts</h2>
+            </div>
+
             <div v-if="loading" class="loading">
                 Loading...
             </div>
@@ -18,11 +22,11 @@
                 />
             </div>
 <!-- 
-            <div v-if="Object.keys(posts).length == 0"> 
+            <div v-if="posts.data.length == 0">
                 Sorry! There is no post.    
             </div>     -->
 
-            <pagination :data="posts" @pagination-change-page="fetchPosts"></pagination>
+            <pagination :data="posts" @pagination-change-page="fetchMyPosts"></pagination>
         </div>
         <div class="col-md-4">
             <sidebar-component />
@@ -37,22 +41,24 @@ export default {
     data(){
         return {
             loading: true,
-            posts: {}
+            posts: {},
+            isMyPost: false
         }
     },
 
     mounted() {
-      this.fetchPosts()
-      this.$store.commit('setAuthUser', window.auth_user)
+      this.fetchMyPosts()
+
+      this.isMyPostCheck()
     },
 
     watch: {
-       '$route': 'fetchPosts'
+       '$route': 'fetchMyPosts'
     },
 
     methods:{
-        fetchPosts(page=1){
-            axios.get('/api/posts?page=' + page)
+        fetchMyPosts(page=1){
+            axios.get('/api/'+ this.$route.params.user_name + '/posts/?page=' + page)
                 .then((response) => {
                     this.posts = response.data.data
                     this.loading = false
@@ -60,6 +66,11 @@ export default {
                 .catch(err => {
                     console.log(err)
                 });
+        },
+
+        isMyPostCheck(){
+            if( this.$store.getters.userName == this.$route.params.user_name )
+                this.isMyPost = true
         }
     },
 }

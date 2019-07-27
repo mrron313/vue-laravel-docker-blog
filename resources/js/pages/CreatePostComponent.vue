@@ -11,7 +11,6 @@
                 <div class="form-group">
                     <label for="name">Title</label>
                     <input type="text" class="form-control" name="title" id="name" v-model="fields.title" />
-                    <div v-if="errors && errors.title" class="text-danger">{{ errors.title[0] }}</div>
                 </div>
                 
                 <div class="form-group">
@@ -21,14 +20,12 @@
                             {{ category.name }}
                         </option>
                     </select>
-                    <div v-if="errors && errors.category_id" class="text-danger">{{ errors.category_id[0] }}</div>
                 </div>
 
                 <div class="form-group">
                     <label for="message">Body</label>
                     <textarea class="form-control" name="message" id="body" rows="5"  v-model="fields.body"></textarea>
                 </div>
-                <div v-if="errors && errors.body" class="text-danger">{{ errors.body[0] }}</div>
 
                 <button type="submit" class="btn btn-primary">Create</button>
             </form>

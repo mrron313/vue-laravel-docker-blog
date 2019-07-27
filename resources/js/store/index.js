@@ -22,6 +22,10 @@ const store = new Vuex.Store({
         
         userToken(state) {
             return state.user.identification_token;
+        },
+
+        userName(state){
+            return state.user.user_name;
         }
     },
 

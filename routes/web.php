@@ -10,16 +10,16 @@ Route::group(['middleware' => 'web'], function () {
         return view('frontend.home');
     })->name('home');
 
-    Route::get('/blog', function () {
+    Route::get('/posts', function () {
         return view('frontend.blog', [
             'auth_user' => Auth::user()
         ]);
-    })->name('blog');
+    })->name('post');
     
     
     Route::get('/dashboard', function () {
         return view('backend.dashboard');
-    });
+    })->name('dashboard');
 });
 
 
