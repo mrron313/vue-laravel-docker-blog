@@ -39,7 +39,7 @@
                     <!-- Left Side Of Navbar -->	
                     <ul class="navbar-nav mr-auto">	
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('blog') }}">Blog</a>
+                            <a class="nav-link" href="{{ route('post') }}">Blog</a>
                         </li>
                      </ul>
                     <!-- Right Side Of Navbar -->

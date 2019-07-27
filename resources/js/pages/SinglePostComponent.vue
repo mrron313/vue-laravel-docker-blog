@@ -94,7 +94,14 @@ export default {
     data(){
         return {
             loading: true,
-            post: {}
+            post: {
+                title: '',
+                body: '',
+                created_at: '',
+                user: {
+                    name: ''
+                }
+            }
         }
     },
 
@@ -108,7 +115,6 @@ export default {
                 .then((response) => {
                     this.post = response.data.data
                     this.loading = false
-                    console.log(this.post)
                 })
                 .catch(err => {
                     console.log(err)

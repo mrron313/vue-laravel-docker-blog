@@ -12,7 +12,7 @@
         <div class="card-footer text-muted">
             <div class="postedOn">
                 Posted on {{ created }} by
-                <a href="#">{{ user }}</a>
+                <router-link :to="{ name: 'single-user-post-component', params: {user_name: userSlug } }">{{ user }}</router-link>
             </div>
             <div class="categoryName">
                 Category: {{ category }}
@@ -23,7 +23,34 @@
 
 <script>
 export default {
-    props: [ 'id', 'title', 'body', 'created', 'user', 'category']
+    props: [ 'id', 'title', 'body', 'created', 'user', 'category'],
+
+    mounted(){
+        console.log(this.$props.user)
+    },
+
+    computed: {
+        userSlug: function () {
+
+            var str = this.$props.user
+
+            str = str.replace(/^\s+|\s+$/g, '');
+
+            str = str.toLowerCase();
+
+            var from = "ÁÄÂÀÃÅČÇĆĎÉĚËÈÊẼĔȆÍÌÎÏŇÑÓÖÒÔÕØŘŔŠŤÚŮÜÙÛÝŸŽáäâàãåčçćďéěëèêẽĕȇíìîïňñóöòôõøðřŕšťúůüùûýÿžþÞĐđßÆa·/_,:;";
+            var to   = "AAAAAACCCDEEEEEEEEIIIINNOOOOOORRSTUUUUUYYZaaaaaacccdeeeeeeeeiiiinnooooooorrstuuuuuyyzbBDdBAa------";
+            for (var i=0, l=from.length ; i<l ; i++) {
+                str = str.replace(new RegExp(from.charAt(i), 'g'), to.charAt(i));
+            }
+
+            str = str.replace(/[^a-z0-9 -]/g, '') 
+            .replace(/\s+/g, '-') 
+            .replace(/-+/g, '-'); 
+
+            return str;
+        }
+    }
 }
 </script>
 
