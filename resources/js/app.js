@@ -1,5 +1,6 @@
 
 require('./bootstrap');
+import store from './store/index.js'
 import BootstrapVue from 'bootstrap-vue'
 import VueRouter from 'vue-router'
 import router from './routes/index.js'
@@ -27,5 +28,6 @@ Vue.filter('truncate', filter);
 
 const app = new Vue({
   el: '#app',
-  router
+  router,
+  store
 });

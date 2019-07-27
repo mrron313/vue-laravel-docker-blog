@@ -19,6 +19,7 @@ class UsersTableSeeder extends Seeder
               'email_verified_at' => now(),
               'role' => 1,
               'password' => '$2y$10$/jovDsXVDLPktHAwnlmQzurKo.3Gx3DNhy7oIzXfdJqffCQoyT7xi', // password
+              'identification_token' => Str::random(32),
               'remember_token' => Str::random(10),
             ),
           ));

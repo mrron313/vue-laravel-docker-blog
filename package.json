@@ -21,11 +21,13 @@
         "sass": "^1.15.2",
         "sass-loader": "^7.1.0",
         "vue": "^2.6.10",
+        "vuex": "^3.1.1",
         "vue-template-compiler": "^2.6.10"
     },
     "dependencies": {
         "bootstrap-vue": "^2.0.0-rc.26",
         "laravel-vue-pagination": "^2.3.0",
-        "vue-router": "^3.0.7"
+        "vue-router": "^3.0.7",
+        "vuex-persistedstate": "^2.5.4"
     }
 }

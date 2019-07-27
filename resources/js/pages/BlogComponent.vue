@@ -18,7 +18,7 @@
                 />
             </div>    
 
-            <pagination :data="posts" @pagination-change-page="fetchData"></pagination>
+            <pagination :data="posts" @pagination-change-page="fetchPosts"></pagination>
         </div>
         <div class="col-md-4">
             <sidebar-component />
@@ -28,6 +28,7 @@
 </template>
 
 <script>
+
 export default {
     data(){
         return {
@@ -37,15 +38,16 @@ export default {
     },
 
     mounted() {
-      this.fetchData()
+      this.fetchPosts()
+      this.$store.commit('setAuthUser', window.auth_user)
     },
 
     watch: {
-       '$route': 'fetchData'
+       '$route': 'fetchPosts'
     },
 
     methods:{
-        fetchData(page=1){
+        fetchPosts(page=1){
             axios.get('/api/posts?page=' + page)
                 .then((response) => {
                     this.posts = response.data.data
