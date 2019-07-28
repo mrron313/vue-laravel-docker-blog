@@ -42,7 +42,10 @@ export default {
     data(){
         return{
             fields: {
-                'identification_token': this.$store.getters.userToken
+                title: '',
+                body: '',
+                category_id: '',
+                identification_token: this.$store.getters.userToken
             },
             savingStatus: false,
             errors: {},

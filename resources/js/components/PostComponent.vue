@@ -25,12 +25,18 @@
 export default {
     props: [ 'id', 'title', 'body', 'created', 'user', 'category'],
 
-    mounted(){
-        console.log(this.$props.user)
+    data(){
+        return{
+            userSlug: ''
+        }
     },
 
-    computed: {
-        userSlug: function () {
+    mounted(){
+        this.userSlugFind()
+    },
+
+    methods: {
+        userSlugFind: function () {
 
             var str = this.$props.user
 
@@ -48,7 +54,7 @@ export default {
             .replace(/\s+/g, '-') 
             .replace(/-+/g, '-'); 
 
-            return str;
+            this.userSlug = str;
         }
     }
 }

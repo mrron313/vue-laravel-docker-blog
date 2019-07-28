@@ -38,7 +38,7 @@
         <br>
 
         <!-- Post Widget -->
-        <div class="card">
+        <div v-if="this.$store.getters.isLoggedIn == true" class="card">
             <h5 class="card-header">My Card</h5>
             <div class="card-body">
                 <div class="row">
@@ -69,7 +69,7 @@
     export default {
         data(){
             return{
-                user_name: ''
+                user_name: '',
             }
         },
 
