@@ -23,6 +23,7 @@ $factory->define(User::class, function (Faker $faker) {
     return [
         'name' => $name,
         'email' => $faker->unique()->safeEmail,
+        'user_image' => '/uploads/user/default.jpg',
         'user_name' => str_slug($name),
         'email_verified_at' => now(),
         'role' => 2,
