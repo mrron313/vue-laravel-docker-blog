@@ -16,14 +16,16 @@ class UserController extends Controller
 
     public function update(Request $request)
     {
-        \Log::info($request);
+        $this->validate($request, [
+            'name' => 'required|min:4|max:16'
+        ]);
 
         User::where('identification_token', $request->input('token'))
                     ->update(['name' => $request->input('name')]);
 
         return response()->json([
-            'data' => User::find($request->input('id')),
-            'message' => 'User data updated Successfully!'
+            'data' => User::where('identification_token', $request->input('token'))->first(),
+            'message' => 'Profile updated successfully!'
         ]);
     }
 

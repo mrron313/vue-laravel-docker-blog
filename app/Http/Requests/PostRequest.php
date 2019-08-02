@@ -27,9 +27,17 @@ class PostRequest extends FormRequest
             'title' => 'required',
             'body' => 'required',
             'category_id' => 'required',
-            'identification_token' => 'required',
         ];
 
         return $rules;
+    }
+
+    public function messages()
+    {
+        return [
+            'title.required' => 'Post title is required',
+            'body.required' => 'Post body is required',
+            'category_id.required' => 'Post category is required',
+        ];
     }
 }

@@ -58,7 +58,6 @@
                 cPassword: '',
                 validationErrors: {},
                 successMsg: ''
-
             }
         },
 

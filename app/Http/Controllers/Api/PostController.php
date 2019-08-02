@@ -11,7 +11,7 @@ class PostController extends Controller
 {
     public function index()
     {
-        $posts = Post::with('user:id,name')
+        $posts = Post::with('user:id,name,user_name')
                         ->with('category:id,name')
                         ->where('approved', 1)
                         ->orderByDesc('created_at')
@@ -24,11 +24,8 @@ class PostController extends Controller
 
     public function store(PostRequest $request)
     {
-        \Log::info($request);
-
         $authUserId = User::where('identification_token', $request->input('identification_token'))
                             ->first()->id;
-        \Log::info($authUserId);                    
 
         $post = new Post();
         $post->title = $request->input('title');
@@ -36,17 +33,18 @@ class PostController extends Controller
         $post->category_id = $request->input('category_id');
         $post->user_id = $authUserId;
 
+        $msg = 'Your post have been added. Waiting for admin response.';
+        
         if($authUserId == 1){
             $post->approved = 1;
+            $msg = 'Post have been added.';
         }    
 
         $post->save();
 
-        \Log::info("Post created.");  
-
         return response()->json([
             'data' => $post,
-            'message' => 'Post have been added. Waiting for admin response.'
+            'message' => $msg
         ], 200);
     }
 
@@ -76,7 +74,7 @@ class PostController extends Controller
     {
         $userPosts = Post::whereHas('user', function($q) use ($userName){
             $q->where('user_name', $userName);
-        })->with('user:id,name')->with('category:id,name')
+        })->with('user:id,name,user_name')->with('category:id,name')
         ->orderByDesc('created_at')
         ->paginate(10);
 

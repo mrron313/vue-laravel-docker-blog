@@ -5,7 +5,17 @@
             
             <h2>Edit Profile</h2>
             <hr>
-            
+
+            <div v-if="success == true" class="alert alert-success" role="alert">
+                {{ successMsg }}
+            </div>
+
+            <div v-if="success == false">
+                <div class="alert alert-danger" v-for="(value, key, index) in validationErrors" :key="index">
+                    {{ value }}
+                </div>
+            </div>
+
             <div class="photo-upload text-center">
                 <div class="col-md-12">
                     <div class="imageDisplay">
@@ -78,7 +88,10 @@
         data(){
             return{
                 user: {},
-                loading: true
+                loading: true,
+                success: false,
+                validationErrors: {},
+                successMsg: ''
             }
         },
 
@@ -106,10 +119,17 @@
                     name: this.user.name
                 })
                 .then((response) => {
+                    this.success = true
+                    this.validationErrors = {}
+                    this.successMsg = response.data.message
                     this.user = response.data.data
                 })
                 .catch((error) => {
-                    console.log(error)
+                    if( error.response.status = 422 ){
+                        this.validationErrors = Object.values(error.response.data.errors).flat()                        
+                        this.success = false
+                        this.successMsg = ''
+                    }
                 })
             }
         }

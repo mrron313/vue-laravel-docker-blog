@@ -2,12 +2,18 @@
 
     <div class="row">
         <div class="col-md-8">
-            <div v-if="savingStatus == true" class="alert alert-success" role="alert">
-                Your post is in pending list.
-            </div>
-
             <h2>Create a post</h2>
             <hr>
+
+            <div v-if="success == true" class="alert alert-success" role="alert">
+                {{ successMsg }}
+            </div>
+
+            <div v-if="success == false">
+                <div class="alert alert-danger" v-for="(value, key, index) in validationErrors" :key="index">
+                    {{ value }}
+                </div>
+            </div>
 
             <form @submit.prevent="submit">
                 <div class="form-group">
@@ -49,9 +55,10 @@ export default {
                 category_id: '',
                 identification_token: this.$store.getters.userToken
             },
-            savingStatus: false,
-            errors: {},
+            success: false,
+            validationErrors: {},
             categories: {},
+            successMsg: ''
         }
     },
 
@@ -61,19 +68,23 @@ export default {
 
     methods:{
         submit(){
-            axios.post('/api/posts', this.fields).then((reponse) => {
-                this.fields.category_id = null 
-                this.fields.title = null 
-                this.fields.body = null 
-                this.savingStatus = true
+            axios.post('/api/posts', this.fields)
+            .then((response) => {
+                this.fields = {}
+                this.success = true
+                this.successMsg = response.data.message
             }).catch((error) => {
-                console.log(error)
+                if (error.response.status == 422){
+                    this.validationErrors = Object.values(error.response.data.errors).flat()                        
+                    this.success = false
+                    this.successMsg = ''
+                }
             });
         },
 
         fetchCategories(){
             axios.get('/api/categories').then((response) => {
-                this.categories = response.data.data;
+                this.categories = response.data.data
             }).catch((error) => {
                 console.log(error)
             })

@@ -1721,31 +1721,11 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 /* harmony default export */ __webpack_exports__["default"] = ({
-  props: ['id', 'title', 'body', 'created', 'user', 'category'],
+  props: ['id', 'title', 'body', 'created', 'user', 'user_name', 'category'],
   data: function data() {
-    return {
-      userSlug: ''
-    };
+    return {};
   },
-  mounted: function mounted() {
-    this.userSlugFind();
-  },
-  methods: {
-    userSlugFind: function userSlugFind() {
-      var str = this.$props.user;
-      str = str.replace(/^\s+|\s+$/g, '');
-      str = str.toLowerCase();
-      var from = "ÁÄÂÀÃÅČÇĆĎÉĚËÈÊẼĔȆÍÌÎÏŇÑÓÖÒÔÕØŘŔŠŤÚŮÜÙÛÝŸŽáäâàãåčçćďéěëèêẽĕȇíìîïňñóöòôõøðřŕšťúůüùûýÿžþÞĐđßÆa·/_,:;";
-      var to = "AAAAAACCCDEEEEEEEEIIIINNOOOOOORRSTUUUUUYYZaaaaaacccdeeeeeeeeiiiinnooooooorrstuuuuuyyzbBDdBAa------";
-
-      for (var i = 0, l = from.length; i < l; i++) {
-        str = str.replace(new RegExp(from.charAt(i), 'g'), to.charAt(i));
-      }
-
-      str = str.replace(/[^a-z0-9 -]/g, '').replace(/\s+/g, '-').replace(/-+/g, '-');
-      this.userSlug = str;
-    }
-  }
+  mounted: function mounted() {}
 });
 
 /***/ }),
@@ -1848,6 +1828,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+//
 //
 //
 //
@@ -2032,6 +2013,12 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -2041,9 +2028,10 @@ __webpack_require__.r(__webpack_exports__);
         category_id: '',
         identification_token: this.$store.getters.userToken
       },
-      savingStatus: false,
-      errors: {},
-      categories: {}
+      success: false,
+      validationErrors: {},
+      categories: {},
+      successMsg: ''
     };
   },
   mounted: function mounted() {
@@ -2053,13 +2041,16 @@ __webpack_require__.r(__webpack_exports__);
     submit: function submit() {
       var _this = this;
 
-      axios.post('/api/posts', this.fields).then(function (reponse) {
-        _this.fields.category_id = null;
-        _this.fields.title = null;
-        _this.fields.body = null;
-        _this.savingStatus = true;
+      axios.post('/api/posts', this.fields).then(function (response) {
+        _this.fields = {};
+        _this.success = true;
+        _this.successMsg = response.data.message;
       })["catch"](function (error) {
-        console.log(error);
+        if (error.response.status == 422) {
+          _this.validationErrors = Object.values(error.response.data.errors).flat();
+          _this.success = false;
+          _this.successMsg = '';
+        }
       });
     },
     fetchCategories: function fetchCategories() {
@@ -2159,11 +2150,24 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
       user: {},
-      loading: true
+      loading: true,
+      success: false,
+      validationErrors: {},
+      successMsg: ''
     };
   },
   mounted: function mounted() {
@@ -2188,9 +2192,16 @@ __webpack_require__.r(__webpack_exports__);
         token: this.$store.getters.userToken,
         name: this.user.name
       }).then(function (response) {
+        _this2.success = true;
+        _this2.validationErrors = {};
+        _this2.successMsg = response.data.message;
         _this2.user = response.data.data;
       })["catch"](function (error) {
-        console.log(error);
+        if (error.response.status = 422) {
+          _this2.validationErrors = Object.values(error.response.data.errors).flat();
+          _this2.success = false;
+          _this2.successMsg = '';
+        }
       });
     }
   }
@@ -2439,6 +2450,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+//
 //
 //
 //
@@ -67868,7 +67880,7 @@ var render = function() {
               attrs: {
                 to: {
                   name: "single-user-post-component",
-                  params: { user_name: _vm.userSlug }
+                  params: { user_name: _vm.user_name }
                 }
               }
             },
@@ -68100,6 +68112,7 @@ var render = function() {
                   body: post.body,
                   created: post.created_at,
                   user: post.user.name,
+                  user_name: post.user.user_name,
                   category: post.category.name
                 }
               })
@@ -68207,17 +68220,35 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "row" }, [
     _c("div", { staticClass: "col-md-8" }, [
-      _vm.savingStatus == true
-        ? _c(
-            "div",
-            { staticClass: "alert alert-success", attrs: { role: "alert" } },
-            [_vm._v("\n            Your post is in pending list.\n        ")]
-          )
-        : _vm._e(),
-      _vm._v(" "),
       _c("h2", [_vm._v("Create a post")]),
       _vm._v(" "),
       _c("hr"),
+      _vm._v(" "),
+      _vm.success == true
+        ? _c(
+            "div",
+            { staticClass: "alert alert-success", attrs: { role: "alert" } },
+            [_vm._v("\n            " + _vm._s(_vm.successMsg) + "\n        ")]
+          )
+        : _vm._e(),
+      _vm._v(" "),
+      _vm.success == false
+        ? _c(
+            "div",
+            _vm._l(_vm.validationErrors, function(value, key, index) {
+              return _c(
+                "div",
+                { key: index, staticClass: "alert alert-danger" },
+                [
+                  _vm._v(
+                    "\n                " + _vm._s(value) + "\n            "
+                  )
+                ]
+              )
+            }),
+            0
+          )
+        : _vm._e(),
       _vm._v(" "),
       _c(
         "form",
@@ -68372,6 +68403,32 @@ var render = function() {
       _c("h2", [_vm._v("Edit Profile")]),
       _vm._v(" "),
       _c("hr"),
+      _vm._v(" "),
+      _vm.success == true
+        ? _c(
+            "div",
+            { staticClass: "alert alert-success", attrs: { role: "alert" } },
+            [_vm._v("\n            " + _vm._s(_vm.successMsg) + "\n        ")]
+          )
+        : _vm._e(),
+      _vm._v(" "),
+      _vm.success == false
+        ? _c(
+            "div",
+            _vm._l(_vm.validationErrors, function(value, key, index) {
+              return _c(
+                "div",
+                { key: index, staticClass: "alert alert-danger" },
+                [
+                  _vm._v(
+                    "\n                " + _vm._s(value) + "\n            "
+                  )
+                ]
+              )
+            }),
+            0
+          )
+        : _vm._e(),
       _vm._v(" "),
       _c("div", { staticClass: "photo-upload text-center" }, [
         _c("div", { staticClass: "col-md-12" }, [
@@ -68849,6 +68906,7 @@ var render = function() {
                   body: post.body,
                   created: post.created_at,
                   user: post.user.name,
+                  user_name: post.user.user_name,
                   category: post.category.name
                 }
               })

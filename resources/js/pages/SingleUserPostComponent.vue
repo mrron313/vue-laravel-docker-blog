@@ -19,6 +19,7 @@
                     :body="post.body"
                     :created="post.created_at"
                     :user="post.user.name"
+                    :user_name="post.user.user_name"
                     :category="post.category.name"
                 />
             </div>
