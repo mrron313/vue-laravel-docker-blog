@@ -39,7 +39,7 @@
                     <!-- Left Side Of Navbar -->	
                     <ul class="navbar-nav mr-auto">	
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('post') }}">Blog</a>
+                            <a class="nav-link" href="{{ route('frontend.post') }}">Blog</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="">About</a>
@@ -97,7 +97,7 @@
         <!-- Footer -->
         <footer class="py-5 bg-dark">
           <div class="container">
-            <p class="m-0 text-center text-white">Copyright &copy; Your Website 2019</p>
+            <p class="m-0 text-center text-white">Copyright &copy; Tech Blog by Arif Ul Islam Ron 2019</p>
           </div>
           <!-- /.container -->
         </footer>

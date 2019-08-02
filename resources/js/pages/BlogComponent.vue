@@ -12,6 +12,7 @@
                     :id="post.id"
                     :title="post.title"
                     :body="post.body"
+                    :approved="post.approved"
                     :created="post.created_at"
                     :user="post.user.name"
                     :user_name="post.user.user_name"

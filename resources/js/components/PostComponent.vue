@@ -3,7 +3,8 @@
     <div class="card mb-4">
         <img class="card-img-top" src="http://placehold.it/750x300" alt="Card image cap">
         <div class="card-body">
-            <h2 class="card-title">{{ title }}</h2>
+            <h2 class="card-title">{{ title }} </h2> <span class="badge badge-info" v-if="approved == 0"> Not Approved </span> 
+            <br>
 
             {{ body | truncate(200, '...')}}
 
@@ -23,18 +24,26 @@
 
 <script>
 export default {
-    props: [ 'id', 'title', 'body', 'created', 'user', 'user_name', 'category'],
+    props: [ 'id', 'title', 'body', 'approved', 'created', 'user', 'user_name', 'category'],
 
     data(){
-        return{
-        }
+        return{}
     },
 
-    mounted(){},
+    mounted(){} ,
 }
 </script>
 
 <style scoped>
+    h2{
+        display: inline-block;
+    }
+
+    span{
+        font-size: 16px;
+        margin-left: 10px
+    }
+
     .postedOn{
         width: 60%;
         float: left

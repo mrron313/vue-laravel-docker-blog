@@ -1720,8 +1720,9 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
-  props: ['id', 'title', 'body', 'created', 'user', 'user_name', 'category'],
+  props: ['id', 'title', 'body', 'approved', 'created', 'user', 'user_name', 'category'],
   data: function data() {
     return {};
   },
@@ -1828,6 +1829,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+//
 //
 //
 //
@@ -2450,6 +2452,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+//
 //
 //
 //
@@ -33924,7 +33927,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n.postedOn[data-v-54a00d62]{\n    width: 60%;\n    float: left\n}\n.categoryName[data-v-54a00d62]{\n    width: 40%;\n    float: right\n}\n", ""]);
+exports.push([module.i, "\nh2[data-v-54a00d62]{\n    display: inline-block;\n}\nspan[data-v-54a00d62]{\n    font-size: 16px;\n    margin-left: 10px\n}\n.postedOn[data-v-54a00d62]{\n    width: 60%;\n    float: left\n}\n.categoryName[data-v-54a00d62]{\n    width: 40%;\n    float: right\n}\n", ""]);
 
 // exports
 
@@ -67847,7 +67850,17 @@ var render = function() {
       "div",
       { staticClass: "card-body" },
       [
-        _c("h2", { staticClass: "card-title" }, [_vm._v(_vm._s(_vm.title))]),
+        _c("h2", { staticClass: "card-title" }, [
+          _vm._v(_vm._s(_vm.title) + " ")
+        ]),
+        _vm._v(" "),
+        _vm.approved == 0
+          ? _c("span", { staticClass: "badge badge-info" }, [
+              _vm._v(" Not Approved ")
+            ])
+          : _vm._e(),
+        _vm._v(" "),
+        _c("br"),
         _vm._v(
           "\n\n        " +
             _vm._s(_vm._f("truncate")(_vm.body, 200, "...")) +
@@ -68110,6 +68123,7 @@ var render = function() {
                   id: post.id,
                   title: post.title,
                   body: post.body,
+                  approved: post.approved,
                   created: post.created_at,
                   user: post.user.name,
                   user_name: post.user.user_name,
@@ -68573,7 +68587,7 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "row" }, [
     _c("div", { staticClass: "col-md-8" }, [
-      _c("h2", [_vm._v("Edit Password")]),
+      _c("h2", [_vm._v("Change Password")]),
       _vm._v(" "),
       _c("hr"),
       _vm._v(" "),
@@ -68904,6 +68918,7 @@ var render = function() {
                   id: post.id,
                   title: post.title,
                   body: post.body,
+                  approved: post.approved,
                   created: post.created_at,
                   user: post.user.name,
                   user_name: post.user.user_name,
