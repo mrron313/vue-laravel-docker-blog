@@ -7,6 +7,8 @@
             </div>
 
             <h2>Create a post</h2>
+            <hr>
+
             <form @submit.prevent="submit">
                 <div class="form-group">
                     <label for="name">Title</label>
@@ -59,8 +61,6 @@ export default {
 
     methods:{
         submit(){
-            this.errors = {}
-
             axios.post('/api/posts', this.fields).then((reponse) => {
                 this.fields.category_id = null 
                 this.fields.title = null 

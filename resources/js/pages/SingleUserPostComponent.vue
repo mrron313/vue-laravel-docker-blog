@@ -5,6 +5,7 @@
 
             <div v-if="isMyPost == true">
                 <h2>My Posts</h2>
+                <hr>
             </div>
 
             <div v-if="loading" class="loading">

@@ -41,6 +41,12 @@
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('post') }}">Blog</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="">Contact</a>
+                        </li>
                      </ul>
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto nav-flex-icons">
