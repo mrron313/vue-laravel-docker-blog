@@ -3,7 +3,7 @@
     <div class="row">
         <div class="col-md-8">
             
-            <h2>Edit Profile</h2>
+            <h2>Profile</h2>
             <hr>
 
             <div v-if="success == true" class="alert alert-success" role="alert">
