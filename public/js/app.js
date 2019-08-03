@@ -2408,8 +2408,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -68751,7 +68749,7 @@ var render = function() {
       _c("h1", { staticClass: "mt-4" }, [_vm._v(_vm._s(_vm.post.title))]),
       _vm._v(" "),
       _c("p", { staticClass: "lead" }, [
-        _vm._v("\n        by\n        "),
+        _vm._v("\n            by\n            "),
         _c("a", { attrs: { href: "#" } }, [_vm._v(_vm._s(_vm.post.user.name))])
       ]),
       _vm._v(" "),
@@ -68774,7 +68772,15 @@ var render = function() {
       _vm._v(" "),
       _c("hr"),
       _vm._v(" "),
-      _vm._m(0),
+      this.$store.getters.isLoggedIn == true
+        ? _c("div", { staticClass: "card my-4" }, [
+            _c("h5", { staticClass: "card-header" }, [
+              _vm._v("Leave a Comment:")
+            ]),
+            _vm._v(" "),
+            _vm._m(0)
+          ])
+        : _vm._e(),
       _vm._v(" "),
       _vm._m(1),
       _vm._v(" "),
@@ -68787,24 +68793,17 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "card my-4" }, [
-      _c("h5", { staticClass: "card-header" }, [_vm._v("Leave a Comment:")]),
-      _vm._v(" "),
-      _c("div", { staticClass: "card-body" }, [
-        _c("form", [
-          _c("div", { staticClass: "form-group" }, [
-            _c("textarea", {
-              staticClass: "form-control",
-              attrs: { rows: "3" }
-            })
-          ]),
-          _vm._v(" "),
-          _c(
-            "button",
-            { staticClass: "btn btn-primary", attrs: { type: "submit" } },
-            [_vm._v("Submit")]
-          )
-        ])
+    return _c("div", { staticClass: "card-body" }, [
+      _c("form", [
+        _c("div", { staticClass: "form-group" }, [
+          _c("textarea", { staticClass: "form-control", attrs: { rows: "3" } })
+        ]),
+        _vm._v(" "),
+        _c(
+          "button",
+          { staticClass: "btn btn-primary", attrs: { type: "submit" } },
+          [_vm._v("Submit")]
+        )
       ])
     ])
   },

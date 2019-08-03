@@ -3,13 +3,13 @@
 Route::auth();
 Auth::routes(['verify' => true]);
 
-Route::group(['middleware' => 'web', 'namespace' => 'Frontend', 'as' => 'frontend.'], function () {
+Route::group(['namespace' => 'Frontend', 'as' => 'frontend.'], function () {
 
     Route::get('/', 'HomeController@index')->name('home');
     Route::get('/posts', 'HomeController@posts')->name('post');    
 });
 
-Route::group(['middleware' => 'web', 'namespace' => 'Backend', 'as' => 'backend.'], function () {
+Route::group(['middleware' => 'web' , 'namespace' => 'Backend', 'as' => 'backend.'], function () {
 
     // Dashboard
     Route::get('/dashboard', 'AdminDashboardController@index')->name('dashboard');

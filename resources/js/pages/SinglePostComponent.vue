@@ -7,15 +7,13 @@
                 Loading...
             </div>
 
-            <!-- Post Content Column -->
-
             <!-- Title -->
             <h1 class="mt-4">{{ post.title }}</h1>
 
             <!-- Author -->
             <p class="lead">
-            by
-            <a href="#">{{ post.user.name }}</a>
+                by
+                <a href="#">{{ post.user.name }}</a>
             </p>
 
             <hr>
@@ -37,7 +35,7 @@
             <hr>
 
             <!-- Comments Form -->
-            <div class="card my-4">
+            <div v-if="this.$store.getters.isLoggedIn == true" class="card my-4">
                 <h5 class="card-header">Leave a Comment:</h5>
                 <div class="card-body">
                     <form>
@@ -101,7 +99,7 @@ export default {
                 user: {
                     name: ''
                 }
-            }
+            },
         }
     },
 

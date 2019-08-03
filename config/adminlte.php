@@ -109,6 +109,12 @@ return [
 
     'menu' => [
         [
+            'text'        => 'Dashboard',
+            'url'         => 'dashboard',
+            'icon'        => 'file',
+            'label_color' => 'success',
+        ],
+        [
             'text'        => 'Posts',
             'url'         => 'dashboard/posts',
             'icon'        => 'file',
@@ -116,7 +122,7 @@ return [
         ],
         [
             'text'        => 'Blog Site',
-            'url'         => '/',
+            'url'         => '',
             'icon'        => 'globe',
             'label_color' => 'success',
         ],

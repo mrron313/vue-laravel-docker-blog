@@ -10,6 +10,11 @@ use App\Http\Controllers\Controller;
 
 class AdminBlogController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware(['auth', 'admin']);
+    }
+
     public function index()
     {
         $posts = Post::with('category:id,name')
