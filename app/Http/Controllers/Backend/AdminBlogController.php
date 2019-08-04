@@ -48,7 +48,7 @@ class AdminBlogController extends Controller
                 'message' => "Your post has been approved."
             ];
 
-            $user->notify(new PostApproved($approvedDetails));
+            $user->notify(new PostApproved($approvedDetails)); // Mail sent to user
         }
         
         return redirect('/dashboard/posts/'. $request->input('post_id') )
