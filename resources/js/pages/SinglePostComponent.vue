@@ -38,21 +38,31 @@
             <div v-if="this.$store.getters.isLoggedIn == true" class="card my-4">
                 <h5 class="card-header">Leave a Comment:</h5>
                 <div class="card-body">
-                    <form>
-                    <div class="form-group">
-                        <textarea class="form-control" rows="3"></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-primary">Submit</button>
+                    <form @submit="submitComment">
+                        <div class="form-group">
+
+                            <textarea v-model="comment.reply" class="form-control" rows="3"></textarea>
+                        
+                        </div>
+                        <button type="submit" class="btn btn-primary">Submit</button>
                     </form>
                 </div>
             </div>
 
             <!-- Single Comment -->
-            <div class="media mb-4">
+            <div v-for="cmnt in post.comments" :key="cmnt.id" class="media mb-4">
                 <img class="d-flex mr-3 rounded-circle" src="http://placehold.it/50x50" alt="">
                 <div class="media-body">
-                    <h5 class="mt-0">Commenter Name</h5>
-                    Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+                    <h5 class="mt-0"> {{ cmnt.user.name }} </h5>
+                    {{ cmnt.reply }}
+
+                    <div v-for="reply in cmnt.replies" :key="reply.id" class="media mt-4">
+                        <img class="d-flex mr-3 rounded-circle" src="http://placehold.it/50x50" alt="">
+                        <div class="media-body">
+                            <h5 class="mt-0"> {{ reply.user.name }} </h5>
+                            {{ reply.reply }}
+                        </div>
+                    </div>
                 </div>
             </div>
 
@@ -98,8 +108,20 @@ export default {
                 created_at: '',
                 user: {
                     name: ''
+                },
+                comments: {
+                    user: {
+                        name: ''
+                    },
+                    reply: '',
                 }
             },
+            comment:{
+                post_id: this.$route.params.id,
+                reply: '',
+                parent_id: 0,
+                token: this.$store.getters.userToken
+            }
         }
     },
 
@@ -117,6 +139,18 @@ export default {
                 .catch(err => {
                     console.log(err)
                 });
+        },
+
+        submitComment(e){
+            e.preventDefault();
+
+            axios.post('/api/comments', this.comment)
+                .then((response) => {
+                    console.log(response)
+                })
+                .catch((err) => {
+                    console.log(err)
+                })
         }
     },
 }

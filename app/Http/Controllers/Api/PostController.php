@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Api;
 
 use App\Models\Post;
 use App\Models\User;
+use App\Models\Comment;
+use Illuminate\Http\Request;
 use App\Http\Requests\PostRequest;
 use App\Http\Controllers\Controller;
 
@@ -52,8 +54,9 @@ class PostController extends Controller
     {
         $post = Post::with('user:id,name')
                     ->with('category:id,name')
+                    ->with('comments.user', 'comments.replies')
                     ->where('id', $postId)->first();
-        
+             
         return response()->json([
             'data' => $post
         ], 200); 
@@ -81,5 +84,22 @@ class PostController extends Controller
         return response()->json([
             'data' => $userPosts
         ], 200);
+    }
+
+    public function storeComment(Request $request)
+    {
+        \Log::info($request);
+        
+        $comment = new Comment();
+        $comment->reply = $request->input('reply');
+        $comment->user_id = User::where('identification_token', $request->input('token'))->first()->id; 
+        $comment->post_id = $request->input('post_id');
+        $comment->parent_id = $request->input('parent_id');
+        $comment->save();
+
+        return response()->json([
+            'data' => $comment,
+            'message' => 'Your response has been posted.'
+        ]);
     }
 }

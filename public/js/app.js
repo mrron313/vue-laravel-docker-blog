@@ -2021,6 +2021,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -2408,6 +2409,16 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -2418,7 +2429,19 @@ __webpack_require__.r(__webpack_exports__);
         created_at: '',
         user: {
           name: ''
+        },
+        comments: {
+          user: {
+            name: ''
+          },
+          reply: ''
         }
+      },
+      comment: {
+        post_id: this.$route.params.id,
+        reply: '',
+        parent_id: 0,
+        token: this.$store.getters.userToken
       }
     };
   },
@@ -2432,6 +2455,14 @@ __webpack_require__.r(__webpack_exports__);
       axios.get('/api/posts/' + this.$route.params.id).then(function (response) {
         _this.post = response.data.data;
         _this.loading = false;
+      })["catch"](function (err) {
+        console.log(err);
+      });
+    },
+    submitComment: function submitComment(e) {
+      e.preventDefault();
+      axios.post('/api/comments', this.comment).then(function (response) {
+        console.log(response);
       })["catch"](function (err) {
         console.log(err);
       });
@@ -68333,20 +68364,26 @@ var render = function() {
                   }
                 }
               },
-              _vm._l(_vm.categories, function(category) {
-                return _c(
-                  "option",
-                  { key: category.id, domProps: { value: category.id } },
-                  [
-                    _vm._v(
-                      "\n                        " +
-                        _vm._s(category.name) +
-                        "\n                    "
-                    )
-                  ]
-                )
-              }),
-              0
+              [
+                _c("option", { attrs: { value: "" } }, [
+                  _vm._v("Select a category")
+                ]),
+                _vm._v(" "),
+                _vm._l(_vm.categories, function(category) {
+                  return _c(
+                    "option",
+                    { key: category.id, domProps: { value: category.id } },
+                    [
+                      _vm._v(
+                        "\n                        " +
+                          _vm._s(category.name) +
+                          "\n                    "
+                      )
+                    ]
+                  )
+                })
+              ],
+              2
             )
           ]),
           _vm._v(" "),
@@ -68739,92 +68776,144 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "row" }, [
-    _c("div", { staticClass: "col-md-12" }, [
-      _vm.loading
-        ? _c("div", { staticClass: "loading" }, [
-            _vm._v("\n            Loading...\n        ")
+    _c(
+      "div",
+      { staticClass: "col-md-12" },
+      [
+        _vm.loading
+          ? _c("div", { staticClass: "loading" }, [
+              _vm._v("\n            Loading...\n        ")
+            ])
+          : _vm._e(),
+        _vm._v(" "),
+        _c("h1", { staticClass: "mt-4" }, [_vm._v(_vm._s(_vm.post.title))]),
+        _vm._v(" "),
+        _c("p", { staticClass: "lead" }, [
+          _vm._v("\n            by\n            "),
+          _c("a", { attrs: { href: "#" } }, [
+            _vm._v(_vm._s(_vm.post.user.name))
           ])
-        : _vm._e(),
-      _vm._v(" "),
-      _c("h1", { staticClass: "mt-4" }, [_vm._v(_vm._s(_vm.post.title))]),
-      _vm._v(" "),
-      _c("p", { staticClass: "lead" }, [
-        _vm._v("\n            by\n            "),
-        _c("a", { attrs: { href: "#" } }, [_vm._v(_vm._s(_vm.post.user.name))])
-      ]),
-      _vm._v(" "),
-      _c("hr"),
-      _vm._v(" "),
-      _c("p", [_vm._v("Posted on: " + _vm._s(_vm.post.created_at))]),
-      _vm._v(" "),
-      _c("hr"),
-      _vm._v(" "),
-      _c("img", {
-        staticClass: "img-fluid rounded",
-        attrs: { src: "http://placehold.it/1100x400", alt: "" }
-      }),
-      _vm._v(" "),
-      _c("hr"),
-      _vm._v(" "),
-      _c("p", [
-        _vm._v("\n            " + _vm._s(_vm.post.body) + "\n        ")
-      ]),
-      _vm._v(" "),
-      _c("hr"),
-      _vm._v(" "),
-      this.$store.getters.isLoggedIn == true
-        ? _c("div", { staticClass: "card my-4" }, [
-            _c("h5", { staticClass: "card-header" }, [
-              _vm._v("Leave a Comment:")
-            ]),
+        ]),
+        _vm._v(" "),
+        _c("hr"),
+        _vm._v(" "),
+        _c("p", [_vm._v("Posted on: " + _vm._s(_vm.post.created_at))]),
+        _vm._v(" "),
+        _c("hr"),
+        _vm._v(" "),
+        _c("img", {
+          staticClass: "img-fluid rounded",
+          attrs: { src: "http://placehold.it/1100x400", alt: "" }
+        }),
+        _vm._v(" "),
+        _c("hr"),
+        _vm._v(" "),
+        _c("p", [
+          _vm._v("\n            " + _vm._s(_vm.post.body) + "\n        ")
+        ]),
+        _vm._v(" "),
+        _c("hr"),
+        _vm._v(" "),
+        this.$store.getters.isLoggedIn == true
+          ? _c("div", { staticClass: "card my-4" }, [
+              _c("h5", { staticClass: "card-header" }, [
+                _vm._v("Leave a Comment:")
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "card-body" }, [
+                _c("form", { on: { submit: _vm.submitComment } }, [
+                  _c("div", { staticClass: "form-group" }, [
+                    _c("textarea", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.comment.reply,
+                          expression: "comment.reply"
+                        }
+                      ],
+                      staticClass: "form-control",
+                      attrs: { rows: "3" },
+                      domProps: { value: _vm.comment.reply },
+                      on: {
+                        input: function($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.$set(_vm.comment, "reply", $event.target.value)
+                        }
+                      }
+                    })
+                  ]),
+                  _vm._v(" "),
+                  _c(
+                    "button",
+                    {
+                      staticClass: "btn btn-primary",
+                      attrs: { type: "submit" }
+                    },
+                    [_vm._v("Submit")]
+                  )
+                ])
+              ])
+            ])
+          : _vm._e(),
+        _vm._v(" "),
+        _vm._l(_vm.post.comments, function(cmnt) {
+          return _c("div", { key: cmnt.id, staticClass: "media mb-4" }, [
+            _c("img", {
+              staticClass: "d-flex mr-3 rounded-circle",
+              attrs: { src: "http://placehold.it/50x50", alt: "" }
+            }),
             _vm._v(" "),
-            _vm._m(0)
+            _c(
+              "div",
+              { staticClass: "media-body" },
+              [
+                _c("h5", { staticClass: "mt-0" }, [
+                  _vm._v(" " + _vm._s(cmnt.user.name) + " ")
+                ]),
+                _vm._v(
+                  "\n                " +
+                    _vm._s(cmnt.reply) +
+                    "\n\n                "
+                ),
+                _vm._l(cmnt.replies, function(reply) {
+                  return _c(
+                    "div",
+                    { key: reply.id, staticClass: "media mt-4" },
+                    [
+                      _c("img", {
+                        staticClass: "d-flex mr-3 rounded-circle",
+                        attrs: { src: "http://placehold.it/50x50", alt: "" }
+                      }),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "media-body" }, [
+                        _c("h5", { staticClass: "mt-0" }, [
+                          _vm._v(" " + _vm._s(reply.user.name) + " ")
+                        ]),
+                        _vm._v(
+                          "\n                        " +
+                            _vm._s(reply.reply) +
+                            "\n                    "
+                        )
+                      ])
+                    ]
+                  )
+                })
+              ],
+              2
+            )
           ])
-        : _vm._e(),
-      _vm._v(" "),
-      _vm._m(1),
-      _vm._v(" "),
-      _vm._m(2)
-    ])
+        }),
+        _vm._v(" "),
+        _vm._m(0)
+      ],
+      2
+    )
   ])
 }
 var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "card-body" }, [
-      _c("form", [
-        _c("div", { staticClass: "form-group" }, [
-          _c("textarea", { staticClass: "form-control", attrs: { rows: "3" } })
-        ]),
-        _vm._v(" "),
-        _c(
-          "button",
-          { staticClass: "btn btn-primary", attrs: { type: "submit" } },
-          [_vm._v("Submit")]
-        )
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "media mb-4" }, [
-      _c("img", {
-        staticClass: "d-flex mr-3 rounded-circle",
-        attrs: { src: "http://placehold.it/50x50", alt: "" }
-      }),
-      _vm._v(" "),
-      _c("div", { staticClass: "media-body" }, [
-        _c("h5", { staticClass: "mt-0" }, [_vm._v("Commenter Name")]),
-        _vm._v(
-          "\n                Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.\n            "
-        )
-      ])
-    ])
-  },
   function() {
     var _vm = this
     var _h = _vm.$createElement

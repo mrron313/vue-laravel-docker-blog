@@ -111,7 +111,7 @@ return [
         [
             'text'        => 'Dashboard',
             'url'         => 'dashboard',
-            'icon'        => 'file',
+            'icon'        => 'crosshairs',
             'label_color' => 'success',
         ],
         [

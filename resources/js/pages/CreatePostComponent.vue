@@ -24,6 +24,7 @@
                 <div class="form-group">
                     <label for="message">Category</label>
                     <select class="form-control" name="category_id" id="category" v-model="fields.category_id">
+                        <option value="">Select a category</option>
                         <option v-for="category in categories" :key="category.id" :value="category.id">
                             {{ category.name }}
                         </option>
