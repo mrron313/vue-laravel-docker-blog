@@ -2,7 +2,7 @@
 
 Route::group(['namespace' => 'Api', 'as' => 'api.'], function () {
     
-    //Posts
+    // Posts
     Route::get('/posts', 'PostController@index')->name('post');
     Route::post('/posts', 'PostController@store')->name('post.store');
     Route::get('/posts/{post}', 'PostController@show')->name('post.show');
@@ -11,7 +11,7 @@ Route::group(['namespace' => 'Api', 'as' => 'api.'], function () {
     // Single User Posts    
     Route::get('/{user}/posts/', 'PostController@singleUserPosts')->name('post.singleuser');
 
-    //Categories
+    // Categories
     Route::get('/categories', 'CategoryController@index')->name('category');
 
     // User Profile
@@ -20,5 +20,8 @@ Route::group(['namespace' => 'Api', 'as' => 'api.'], function () {
 
     // User Password
     Route::put('/user/password/update', 'UserController@updatePassword')->name('user.password.update');
+    
+    // User Save Device Token
+    Route::post('/user/devicetoken/save', 'UserController@saveDeviceToken')->name('user.devicetoken.save');
 
 });

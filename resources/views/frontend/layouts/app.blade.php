@@ -98,11 +98,6 @@
             </nav>
 
             <main>
-                <div id="token"></div>
-                <div id="msg"></div>
-                <div id="notis"></div>
-                <div id="err"></div>
-                
                 @yield('content')
             </main>
 
@@ -115,51 +110,5 @@
             </footer>
             
         </div>
-
-        <script src="https://www.gstatic.com/firebasejs/6.3.4/firebase.js"></script>
-        <script>
-
-            MsgElem = document.getElementById("msg");
-            TokenElem = document.getElementById("token");
-            NotisElem = document.getElementById("notis");
-            ErrElem = document.getElementById("err");
-
-            var config = {
-                apiKey: "AIzaSyBBCIU0GGrYeXGqVVc3o9tRcHwttL9zQKE",
-                authDomain: "ron-test-8259b.firebaseapp.com",
-                databaseURL: "https://ron-test-8259b.firebaseio.com",
-                projectId: "ron-test-8259b",
-                storageBucket: "ron-test-8259b.appspot.com",
-                messagingSenderId: "780107221889",
-                appId: "1:780107221889:web:006dd8ec664dcd65"
-            };
-
-            firebase.initializeApp(config);
-            const messaging = firebase.messaging();
-            
-            messaging
-                .requestPermission()
-                .then(function () {
-                    MsgElem.innerHTML = "Notification permission granted." 
-                    console.log("Notification permission granted.");
-                    
-                    // get the token in the form of promise
-                    return messaging.getToken()
-                })
-                .then(function(token) {
-                    TokenElem.innerHTML = "token is : " + token
-                })
-                .catch(function (err) {
-                    ErrElem.innerHTML =  ErrElem.innerHTML + "; " + err
-                    console.log("Unable to get permission to notify.", err);
-                });
-           
-            messaging.onMessage(function(payload) {
-                console.log("Message received. ", payload);
-                NotisElem.innerHTML = NotisElem.innerHTML + JSON.stringify(payload) 
-            });
-
-        </script>
-
     </body>
 </html>
