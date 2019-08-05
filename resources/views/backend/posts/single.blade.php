@@ -20,7 +20,7 @@
         <h5 class="card-title">{{ $post->title }}</h5>
         <p class="card-text">{{ $post->body }}</p>
 
-        @if( $post->approved !== 1 )
+        {{--  @if( $post->approved !== 1 )  --}}
             <form action="{{ route('backend.post.approve') }}" method="post">
                 @csrf
                 {{ method_field('PUT') }}
@@ -28,7 +28,7 @@
                 <input type="hidden" value="{{ $post->id }}" name="post_id">
                 <button class="btn btn-primary" type="submit" >Approve</button>
             </form>
-        @endif
+        {{--  @endif  --}}
 
     </div>
 </div>
