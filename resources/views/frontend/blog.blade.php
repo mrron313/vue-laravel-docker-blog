@@ -68,7 +68,7 @@ crossorigin="anonymous"></script>
             noteTitle = payload.notification.title; 
             noteOptions = {
                 body: payload.notification.body,
-                icon: "typewriter.jpg", 
+                icon: payload.notification.icon, 
             };
         
             console.log("title ",noteTitle, " ", payload.notification.body);

@@ -53,8 +53,14 @@ class AdminBlogController extends Controller
 
         $key = 'AAAAtaIDi4E:APA91bFOEgexTYoZmdVMhBtNyN92cVjysHsYdiT70B5_NP4CqFnOxouysZvrFls9jlfwrQDFoyyFlCUYucFJ7C0Pb4pBb9WNJHUdJD_Erf6eVkZCSsAMoSIXVD_fi3lyTO-Y9gEa-PeB';
 
-        $data = array("to" => $user->user_device_token,
-                      "notification" => array( "title" => "Tech Blog", "body" => "Your post is approved!","icon" => "icon.png", "click_action" => "http://127.0.0.1:8000"));                                                                    
+        $data = array(
+                      "to" => $user->user_device_token,
+                      "notification" => array( "title" => "Tech Blog", 
+                      "body" => "Your post is approved!", 
+                      "icon" => url('/images/favicon-96x96.png'), 
+                      "click_action" => url('/'))
+                );          
+
         $data_string = json_encode($data); 
         
         echo "The Json Data : ".$data_string; 
