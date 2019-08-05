@@ -48,8 +48,34 @@ class AdminBlogController extends Controller
                 'message' => "Your post has been approved."
             ];
 
-            $user->notify(new PostApproved($approvedDetails));
+            $user->notify(new PostApproved($approvedDetails)); // Mail sent to user
         }
+
+        $key = 'AAAAtaIDi4E:APA91bFOEgexTYoZmdVMhBtNyN92cVjysHsYdiT70B5_NP4CqFnOxouysZvrFls9jlfwrQDFoyyFlCUYucFJ7C0Pb4pBb9WNJHUdJD_Erf6eVkZCSsAMoSIXVD_fi3lyTO-Y9gEa-PeB';
+
+        $data = array("to" => $user->user_device_token,
+                      "notification" => array( "title" => "Tech Blog", "body" => "Your post is approved!","icon" => "icon.png", "click_action" => "http://127.0.0.1:8000"));                                                                    
+        $data_string = json_encode($data); 
+        
+        echo "The Json Data : ".$data_string; 
+        
+        $headers = array
+        (
+             'Authorization: key=' . $key, 
+             'Content-Type: application/json'
+        );                                                                                 
+                                                                                                                             
+        $ch = curl_init();  
+        
+        curl_setopt( $ch,CURLOPT_URL, 'https://fcm.googleapis.com/fcm/send' );                                                                  
+        curl_setopt( $ch,CURLOPT_POST, true );  
+        curl_setopt( $ch,CURLOPT_HTTPHEADER, $headers );
+        curl_setopt( $ch,CURLOPT_RETURNTRANSFER, true );
+        curl_setopt( $ch,CURLOPT_POSTFIELDS, $data_string);                                                                  
+                                                                                                                             
+        $result = curl_exec($ch);
+        
+        curl_close ($ch);        
         
         return redirect('/dashboard/posts/'. $request->input('post_id') )
                     ->with('success', 'Post is approved!');

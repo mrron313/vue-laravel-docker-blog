@@ -1,6 +1,6 @@
 <?php
 
-Route::group(['namespace' => 'Api', 'as' => 'api.', 'middleware' => ['auth']], function () {
+Route::group(['namespace' => 'Api', 'as' => 'api.'], function () {
     
     // Posts
     Route::get('/posts', 'PostController@index')->name('post');
@@ -23,5 +23,8 @@ Route::group(['namespace' => 'Api', 'as' => 'api.', 'middleware' => ['auth']], f
 
     // User Password
     Route::put('/user/password/update', 'UserController@updatePassword')->name('user.password.update');
+    
+    // User Save Device Token
+    Route::post('/user/devicetoken/save', 'UserController@saveDeviceToken')->name('user.devicetoken.save');
 
 });

@@ -42,4 +42,5 @@ class UserController extends Controller
             'message' => 'Password updated successfully!'
         ]);
     }
+
 }
