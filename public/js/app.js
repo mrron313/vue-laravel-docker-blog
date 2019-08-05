@@ -2316,159 +2316,9 @@ __webpack_require__.r(__webpack_exports__);
   !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/pages/SinglePostComponent.vue?vue&type=script&lang=js& ***!
   \*************************************************************************************************************************************************************************/
 /*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports) {
 
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-/* harmony default export */ __webpack_exports__["default"] = ({
-  data: function data() {
-    return {
-      loading: true,
-      post: {
-        title: '',
-        body: '',
-        created_at: '',
-        user: {
-          name: ''
-        },
-        comments: {
-          user: {
-            name: ''
-          },
-          reply: ''
-        }
-      },
-      comment: {
-        post_id: this.$route.params.id,
-        reply: '',
-        parent_id: 0,
-        token: this.$store.getters.userToken
-      }
-    };
-  },
-  mounted: function mounted() {
-    this.fetchData();
-  },
-  methods: {
-    fetchData: function fetchData() {
-      var _this = this;
-
-      axios.get('/api/posts/' + this.$route.params.id).then(function (response) {
-        _this.post = response.data.data;
-        _this.loading = false;
-      })["catch"](function (err) {
-        console.log(err);
-      });
-    },
-    submitComment: function submitComment(e) {
-      e.preventDefault();
-      axios.post('/api/comments', this.comment).then(function (response) {
-        console.log(response);
-      })["catch"](function (err) {
-        console.log(err);
-      });
-    }
-  }
-});
+throw new Error("Module build failed (from ./node_modules/babel-loader/lib/index.js):\nSyntaxError: /opt/lampp/htdocs/vue-laravel-blog/resources/js/pages/SinglePostComponent.vue: In strict mode code, functions can only be declared at top level or inside a block (136:14)\n\n\u001b[0m \u001b[90m 134 | \u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 135 | \u001b[39m    watch(){\u001b[0m\n\u001b[0m\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 136 | \u001b[39m        post\u001b[33m:\u001b[39m \u001b[36mfunction\u001b[39m(){\u001b[0m\n\u001b[0m \u001b[90m     | \u001b[39m              \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 137 | \u001b[39m            console\u001b[33m.\u001b[39mlog(\u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mpost)\u001b[0m\n\u001b[0m \u001b[90m 138 | \u001b[39m        }\u001b[0m\n\u001b[0m \u001b[90m 139 | \u001b[39m    }\u001b[33m,\u001b[39m\u001b[0m\n    at Parser.raise (/opt/lampp/htdocs/vue-laravel-blog/node_modules/@babel/parser/lib/index.js:6325:17)\n    at Parser.parseStatementContent (/opt/lampp/htdocs/vue-laravel-blog/node_modules/@babel/parser/lib/index.js:9861:18)\n    at Parser.parseStatement (/opt/lampp/htdocs/vue-laravel-blog/node_modules/@babel/parser/lib/index.js:9829:17)\n    at Parser.parseLabeledStatement (/opt/lampp/htdocs/vue-laravel-blog/node_modules/@babel/parser/lib/index.js:10356:22)\n    at Parser.parseStatementContent (/opt/lampp/htdocs/vue-laravel-blog/node_modules/@babel/parser/lib/index.js:9961:19)\n    at Parser.parseStatement (/opt/lampp/htdocs/vue-laravel-blog/node_modules/@babel/parser/lib/index.js:9829:17)\n    at Parser.parseBlockOrModuleBlockBody (/opt/lampp/htdocs/vue-laravel-blog/node_modules/@babel/parser/lib/index.js:10405:25)\n    at Parser.parseBlockBody (/opt/lampp/htdocs/vue-laravel-blog/node_modules/@babel/parser/lib/index.js:10392:10)\n    at Parser.parseBlock (/opt/lampp/htdocs/vue-laravel-blog/node_modules/@babel/parser/lib/index.js:10376:10)\n    at Parser.parseFunctionBody (/opt/lampp/htdocs/vue-laravel-blog/node_modules/@babel/parser/lib/index.js:9424:24)\n    at Parser.parseFunctionBodyAndFinish (/opt/lampp/htdocs/vue-laravel-blog/node_modules/@babel/parser/lib/index.js:9394:10)\n    at Parser.parseMethod (/opt/lampp/htdocs/vue-laravel-blog/node_modules/@babel/parser/lib/index.js:9348:10)\n    at Parser.parseObjectMethod (/opt/lampp/htdocs/vue-laravel-blog/node_modules/@babel/parser/lib/index.js:9264:19)\n    at Parser.parseObjPropValue (/opt/lampp/htdocs/vue-laravel-blog/node_modules/@babel/parser/lib/index.js:9306:23)\n    at Parser.parseObjectMember (/opt/lampp/htdocs/vue-laravel-blog/node_modules/@babel/parser/lib/index.js:9230:10)\n    at Parser.parseObj (/opt/lampp/htdocs/vue-laravel-blog/node_modules/@babel/parser/lib/index.js:9154:25)\n    at Parser.parseExprAtom (/opt/lampp/htdocs/vue-laravel-blog/node_modules/@babel/parser/lib/index.js:8784:28)\n    at Parser.parseExprSubscripts (/opt/lampp/htdocs/vue-laravel-blog/node_modules/@babel/parser/lib/index.js:8412:23)\n    at Parser.parseMaybeUnary (/opt/lampp/htdocs/vue-laravel-blog/node_modules/@babel/parser/lib/index.js:8392:21)\n    at Parser.parseExprOps (/opt/lampp/htdocs/vue-laravel-blog/node_modules/@babel/parser/lib/index.js:8267:23)\n    at Parser.parseMaybeConditional (/opt/lampp/htdocs/vue-laravel-blog/node_modules/@babel/parser/lib/index.js:8240:23)\n    at Parser.parseMaybeAssign (/opt/lampp/htdocs/vue-laravel-blog/node_modules/@babel/parser/lib/index.js:8187:21)\n    at Parser.parseExportDefaultExpression (/opt/lampp/htdocs/vue-laravel-blog/node_modules/@babel/parser/lib/index.js:11010:24)\n    at Parser.parseExport (/opt/lampp/htdocs/vue-laravel-blog/node_modules/@babel/parser/lib/index.js:10905:31)\n    at Parser.parseStatementContent (/opt/lampp/htdocs/vue-laravel-blog/node_modules/@babel/parser/lib/index.js:9933:27)\n    at Parser.parseStatement (/opt/lampp/htdocs/vue-laravel-blog/node_modules/@babel/parser/lib/index.js:9829:17)\n    at Parser.parseBlockOrModuleBlockBody (/opt/lampp/htdocs/vue-laravel-blog/node_modules/@babel/parser/lib/index.js:10405:25)\n    at Parser.parseBlockBody (/opt/lampp/htdocs/vue-laravel-blog/node_modules/@babel/parser/lib/index.js:10392:10)\n    at Parser.parseTopLevel (/opt/lampp/htdocs/vue-laravel-blog/node_modules/@babel/parser/lib/index.js:9758:10)\n    at Parser.parse (/opt/lampp/htdocs/vue-laravel-blog/node_modules/@babel/parser/lib/index.js:11270:17)\n    at parse (/opt/lampp/htdocs/vue-laravel-blog/node_modules/@babel/parser/lib/index.js:11306:38)\n    at parser (/opt/lampp/htdocs/vue-laravel-blog/node_modules/@babel/core/lib/transformation/normalize-file.js:170:34)\n    at normalizeFile (/opt/lampp/htdocs/vue-laravel-blog/node_modules/@babel/core/lib/transformation/normalize-file.js:138:11)\n    at runSync (/opt/lampp/htdocs/vue-laravel-blog/node_modules/@babel/core/lib/transformation/index.js:44:43)\n    at runAsync (/opt/lampp/htdocs/vue-laravel-blog/node_modules/@babel/core/lib/transformation/index.js:35:14)\n    at process.nextTick (/opt/lampp/htdocs/vue-laravel-blog/node_modules/@babel/core/lib/transform.js:34:34)");
 
 /***/ }),
 
@@ -22075,7 +21925,7 @@ var VBTooltip = {
 /*!*************************************************!*\
   !*** ./node_modules/bootstrap-vue/esm/index.js ***!
   \*************************************************/
-/*! exports provided: BVConfigPlugin, BVConfig, BootstrapVue, install, setConfig, default, componentsPlugin, BVModalPlugin, BVToastPlugin, AlertPlugin, BAlert, BadgePlugin, BBadge, BreadcrumbPlugin, BBreadcrumb, BBreadcrumbItem, ButtonPlugin, BButton, BButtonClose, ButtonGroupPlugin, BButtonGroup, ButtonToolbarPlugin, BButtonToolbar, CardPlugin, BCard, BCardBody, BCardFooter, BCardGroup, BCardHeader, BCardImg, BCardImgLazy, BCardSubTitle, BCardText, BCardTitle, CarouselPlugin, BCarousel, BCarouselSlide, CollapsePlugin, BCollapse, DropdownPlugin, BDropdown, BDropdownItem, BDropdownItemButton, BDropdownDivider, BDropdownForm, BDropdownGroup, BDropdownHeader, BDropdownText, EmbedPlugin, BEmbed, FormPlugin, BForm, BFormDatalist, BFormText, BFormInvalidFeedback, BFormValidFeedback, FormCheckboxPlugin, BFormCheckbox, BFormCheckboxGroup, FormFilePlugin, BFormFile, FormGroupPlugin, BFormGroup, FormInputPlugin, BFormInput, FormRadioPlugin, BFormRadio, BFormRadioGroup, FormSelectPlugin, BFormSelect, FormTextareaPlugin, BFormTextarea, ImagePlugin, BImg, BImgLazy, InputGroupPlugin, BInputGroup, BInputGroupAddon, BInputGroupAppend, BInputGroupPrepend, BInputGroupText, JumbotronPlugin, BJumbotron, LayoutPlugin, BContainer, BRow, BCol, BFormRow, LinkPlugin, BLink, ListGroupPlugin, BListGroup, BListGroupItem, MediaPlugin, BMedia, BMediaAside, BMediaBody, ModalPlugin, BModal, NavPlugin, BNav, BNavForm, BNavItem, BNavItemDropdown, BNavText, NavbarPlugin, BNavbar, BNavbarBrand, BNavbarNav, BNavbarToggle, PaginationPlugin, BPagination, PaginationNavPlugin, BPaginationNav, PopoverPlugin, BPopover, ProgressPlugin, BProgress, BProgressBar, SpinnerPlugin, BSpinner, TablePlugin, BTable, BTableLite, TabsPlugin, BTabs, BTab, ToastPlugin, BToast, BToaster, TooltipPlugin, BTooltip, directivesPlugin, VBModalPlugin, VBModal, VBPopoverPlugin, VBPopover, VBScrollspyPlugin, VBScrollspy, VBTogglePlugin, VBToggle, VBTooltipPlugin, VBTooltip */
+/*! exports provided: componentsPlugin, BVModalPlugin, BVToastPlugin, AlertPlugin, BAlert, BadgePlugin, BBadge, BreadcrumbPlugin, BBreadcrumb, BBreadcrumbItem, ButtonPlugin, BButton, BButtonClose, ButtonGroupPlugin, BButtonGroup, ButtonToolbarPlugin, BButtonToolbar, CardPlugin, BCard, BCardBody, BCardFooter, BCardGroup, BCardHeader, BCardImg, BCardImgLazy, BCardSubTitle, BCardText, BCardTitle, CarouselPlugin, BCarousel, BCarouselSlide, CollapsePlugin, BCollapse, DropdownPlugin, BDropdown, BDropdownItem, BDropdownItemButton, BDropdownDivider, BDropdownForm, BDropdownGroup, BDropdownHeader, BDropdownText, EmbedPlugin, BEmbed, FormPlugin, BForm, BFormDatalist, BFormText, BFormInvalidFeedback, BFormValidFeedback, FormCheckboxPlugin, BFormCheckbox, BFormCheckboxGroup, FormFilePlugin, BFormFile, FormGroupPlugin, BFormGroup, FormInputPlugin, BFormInput, FormRadioPlugin, BFormRadio, BFormRadioGroup, FormSelectPlugin, BFormSelect, FormTextareaPlugin, BFormTextarea, ImagePlugin, BImg, BImgLazy, InputGroupPlugin, BInputGroup, BInputGroupAddon, BInputGroupAppend, BInputGroupPrepend, BInputGroupText, JumbotronPlugin, BJumbotron, LayoutPlugin, BContainer, BRow, BCol, BFormRow, LinkPlugin, BLink, ListGroupPlugin, BListGroup, BListGroupItem, MediaPlugin, BMedia, BMediaAside, BMediaBody, ModalPlugin, BModal, NavPlugin, BNav, BNavForm, BNavItem, BNavItemDropdown, BNavText, NavbarPlugin, BNavbar, BNavbarBrand, BNavbarNav, BNavbarToggle, PaginationPlugin, BPagination, PaginationNavPlugin, BPaginationNav, PopoverPlugin, BPopover, ProgressPlugin, BProgress, BProgressBar, SpinnerPlugin, BSpinner, TablePlugin, BTable, BTableLite, TabsPlugin, BTabs, BTab, ToastPlugin, BToast, BToaster, TooltipPlugin, BTooltip, directivesPlugin, VBModalPlugin, VBModal, VBPopoverPlugin, VBPopover, VBScrollspyPlugin, VBScrollspy, VBTogglePlugin, VBToggle, VBTooltipPlugin, VBTooltip, BVConfigPlugin, BVConfig, BootstrapVue, install, setConfig, default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -85889,8 +85739,8 @@ var store = new vuex__WEBPACK_IMPORTED_MODULE_1__["default"].Store({
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /var/www/blog/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /var/www/blog/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /opt/lampp/htdocs/vue-laravel-blog/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /opt/lampp/htdocs/vue-laravel-blog/resources/sass/app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

@@ -110,10 +110,13 @@ export default {
                     name: ''
                 },
                 comments: {
+                    post_id: '',
+                    reply: '',
                     user: {
                         name: ''
                     },
-                    reply: '',
+                    parent_id: '',
+                    token: ''
                 }
             },
             comment:{
@@ -127,6 +130,12 @@ export default {
 
     mounted() {
       this.fetchData()
+    },
+
+    watch(){
+        post: function(){
+            console.log(this.post)
+        }
     },
 
     methods:{
