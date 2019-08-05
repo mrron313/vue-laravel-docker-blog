@@ -1,6 +1,6 @@
 <?php
 
-Route::group(['namespace' => 'Api', 'as' => 'api.', 'middleware' => ['auth']], function () {
+Route::group(['namespace' => 'Api', 'as' => 'api.'], function () {
     
     // Posts
     Route::get('/posts', 'PostController@index')->name('post');
