@@ -55,43 +55,29 @@
                 <div class="media-body">
                     <h5 class="mt-0"> {{ cmnt.user.name }} </h5>
                     {{ cmnt.reply }}
+                        <a class="btn btn-link" data-toggle="collapse" :href="'#multiCollapseExample' + cmnt.id" role="button" aria-expanded="false" aria-controls="multiCollapseExample1">Reply</a>
+                        <div class="collapse multi-collapse" :id="'multiCollapseExample' + cmnt.id">
+                            <div class="card card-body">
+                                <form @submit="submitComment">
+                                    <div class="form-group">
 
+                                        <textarea v-model="comment.reply" class="form-control" rows="3"></textarea>
+                                        <input type="text" v-model="cmnt.id">
+
+                                    </div>
+                                    <button type="submit" class="btn btn-primary">Submit</button>
+                                </form>
+                            </div>
+                        </div>
                     <div v-for="reply in cmnt.replies" :key="reply.id" class="media mt-4">
                         <img class="d-flex mr-3 rounded-circle" src="http://placehold.it/50x50" alt="">
                         <div class="media-body">
                             <h5 class="mt-0"> {{ reply.user.name }} </h5>
-                            {{ reply.reply }}
+                            {{ reply.reply }} 
                         </div>
                     </div>
                 </div>
             </div>
-
-            <!-- Comment with nested comments -->
-            <div class="media mb-4">
-                <img class="d-flex mr-3 rounded-circle" src="http://placehold.it/50x50" alt="">
-                <div class="media-body">
-                    <h5 class="mt-0">Commenter Name</h5>
-                    Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
-
-                    <div class="media mt-4">
-                    <img class="d-flex mr-3 rounded-circle" src="http://placehold.it/50x50" alt="">
-                    <div class="media-body">
-                        <h5 class="mt-0">Commenter Name</h5>
-                        Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
-                    </div>
-                    </div>
-
-                    <div class="media mt-4">
-                    <img class="d-flex mr-3 rounded-circle" src="http://placehold.it/50x50" alt="">
-                    <div class="media-body">
-                        <h5 class="mt-0">Commenter Name</h5>
-                        Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
-                    </div>
-                    </div>
-
-                </div>
-            </div>
-
         </div>
     </div>
 
@@ -124,18 +110,15 @@ export default {
                 reply: '',
                 parent_id: 0,
                 token: this.$store.getters.userToken
+            },
+            cmnt: {
+                id: ''
             }
         }
     },
 
     mounted() {
       this.fetchData()
-    },
-
-    watch(){
-        post: function(){
-            console.log(this.post)
-        }
     },
 
     methods:{
@@ -153,6 +136,7 @@ export default {
         submitComment(e){
             e.preventDefault();
 
+console.log(this.cmnt)
             axios.post('/api/comments', this.comment)
                 .then((response) => {
                     console.log(response)

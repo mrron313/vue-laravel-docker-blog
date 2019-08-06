@@ -54,7 +54,9 @@ class PostController extends Controller
     {
         $post = Post::with('user:id,name')
                     ->with('category:id,name')
-                    ->with('comments.user', 'comments.replies')
+                    ->with(['comments' => function($q){
+                        $q->with('user')->with('replies.user')->where('parent_id', 0);
+                    }])
                     ->where('id', $postId)->first();
              
         return response()->json([

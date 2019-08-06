@@ -43,4 +43,15 @@ class UserController extends Controller
         ]);
     }
 
+    public function saveDeviceToken(Request $request)
+    {
+        $user = User::find($request->input('id'));
+        $user->user_device_token = $request->input('user_device_token');
+        $user->save();
+
+        return response()->json([
+            'data' => $user,
+            'message' => 'Device token saved.'
+        ]);
+    }
 }

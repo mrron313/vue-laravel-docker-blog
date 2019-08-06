@@ -2316,9 +2316,152 @@ __webpack_require__.r(__webpack_exports__);
   !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/pages/SinglePostComponent.vue?vue&type=script&lang=js& ***!
   \*************************************************************************************************************************************************************************/
 /*! exports provided: default */
-/***/ (function(module, exports) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-throw new Error("Module build failed (from ./node_modules/babel-loader/lib/index.js):\nSyntaxError: /opt/lampp/htdocs/vue-laravel-blog/resources/js/pages/SinglePostComponent.vue: In strict mode code, functions can only be declared at top level or inside a block (136:14)\n\n\u001b[0m \u001b[90m 134 | \u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 135 | \u001b[39m    watch(){\u001b[0m\n\u001b[0m\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 136 | \u001b[39m        post\u001b[33m:\u001b[39m \u001b[36mfunction\u001b[39m(){\u001b[0m\n\u001b[0m \u001b[90m     | \u001b[39m              \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 137 | \u001b[39m            console\u001b[33m.\u001b[39mlog(\u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mpost)\u001b[0m\n\u001b[0m \u001b[90m 138 | \u001b[39m        }\u001b[0m\n\u001b[0m \u001b[90m 139 | \u001b[39m    }\u001b[33m,\u001b[39m\u001b[0m\n    at Parser.raise (/opt/lampp/htdocs/vue-laravel-blog/node_modules/@babel/parser/lib/index.js:6325:17)\n    at Parser.parseStatementContent (/opt/lampp/htdocs/vue-laravel-blog/node_modules/@babel/parser/lib/index.js:9861:18)\n    at Parser.parseStatement (/opt/lampp/htdocs/vue-laravel-blog/node_modules/@babel/parser/lib/index.js:9829:17)\n    at Parser.parseLabeledStatement (/opt/lampp/htdocs/vue-laravel-blog/node_modules/@babel/parser/lib/index.js:10356:22)\n    at Parser.parseStatementContent (/opt/lampp/htdocs/vue-laravel-blog/node_modules/@babel/parser/lib/index.js:9961:19)\n    at Parser.parseStatement (/opt/lampp/htdocs/vue-laravel-blog/node_modules/@babel/parser/lib/index.js:9829:17)\n    at Parser.parseBlockOrModuleBlockBody (/opt/lampp/htdocs/vue-laravel-blog/node_modules/@babel/parser/lib/index.js:10405:25)\n    at Parser.parseBlockBody (/opt/lampp/htdocs/vue-laravel-blog/node_modules/@babel/parser/lib/index.js:10392:10)\n    at Parser.parseBlock (/opt/lampp/htdocs/vue-laravel-blog/node_modules/@babel/parser/lib/index.js:10376:10)\n    at Parser.parseFunctionBody (/opt/lampp/htdocs/vue-laravel-blog/node_modules/@babel/parser/lib/index.js:9424:24)\n    at Parser.parseFunctionBodyAndFinish (/opt/lampp/htdocs/vue-laravel-blog/node_modules/@babel/parser/lib/index.js:9394:10)\n    at Parser.parseMethod (/opt/lampp/htdocs/vue-laravel-blog/node_modules/@babel/parser/lib/index.js:9348:10)\n    at Parser.parseObjectMethod (/opt/lampp/htdocs/vue-laravel-blog/node_modules/@babel/parser/lib/index.js:9264:19)\n    at Parser.parseObjPropValue (/opt/lampp/htdocs/vue-laravel-blog/node_modules/@babel/parser/lib/index.js:9306:23)\n    at Parser.parseObjectMember (/opt/lampp/htdocs/vue-laravel-blog/node_modules/@babel/parser/lib/index.js:9230:10)\n    at Parser.parseObj (/opt/lampp/htdocs/vue-laravel-blog/node_modules/@babel/parser/lib/index.js:9154:25)\n    at Parser.parseExprAtom (/opt/lampp/htdocs/vue-laravel-blog/node_modules/@babel/parser/lib/index.js:8784:28)\n    at Parser.parseExprSubscripts (/opt/lampp/htdocs/vue-laravel-blog/node_modules/@babel/parser/lib/index.js:8412:23)\n    at Parser.parseMaybeUnary (/opt/lampp/htdocs/vue-laravel-blog/node_modules/@babel/parser/lib/index.js:8392:21)\n    at Parser.parseExprOps (/opt/lampp/htdocs/vue-laravel-blog/node_modules/@babel/parser/lib/index.js:8267:23)\n    at Parser.parseMaybeConditional (/opt/lampp/htdocs/vue-laravel-blog/node_modules/@babel/parser/lib/index.js:8240:23)\n    at Parser.parseMaybeAssign (/opt/lampp/htdocs/vue-laravel-blog/node_modules/@babel/parser/lib/index.js:8187:21)\n    at Parser.parseExportDefaultExpression (/opt/lampp/htdocs/vue-laravel-blog/node_modules/@babel/parser/lib/index.js:11010:24)\n    at Parser.parseExport (/opt/lampp/htdocs/vue-laravel-blog/node_modules/@babel/parser/lib/index.js:10905:31)\n    at Parser.parseStatementContent (/opt/lampp/htdocs/vue-laravel-blog/node_modules/@babel/parser/lib/index.js:9933:27)\n    at Parser.parseStatement (/opt/lampp/htdocs/vue-laravel-blog/node_modules/@babel/parser/lib/index.js:9829:17)\n    at Parser.parseBlockOrModuleBlockBody (/opt/lampp/htdocs/vue-laravel-blog/node_modules/@babel/parser/lib/index.js:10405:25)\n    at Parser.parseBlockBody (/opt/lampp/htdocs/vue-laravel-blog/node_modules/@babel/parser/lib/index.js:10392:10)\n    at Parser.parseTopLevel (/opt/lampp/htdocs/vue-laravel-blog/node_modules/@babel/parser/lib/index.js:9758:10)\n    at Parser.parse (/opt/lampp/htdocs/vue-laravel-blog/node_modules/@babel/parser/lib/index.js:11270:17)\n    at parse (/opt/lampp/htdocs/vue-laravel-blog/node_modules/@babel/parser/lib/index.js:11306:38)\n    at parser (/opt/lampp/htdocs/vue-laravel-blog/node_modules/@babel/core/lib/transformation/normalize-file.js:170:34)\n    at normalizeFile (/opt/lampp/htdocs/vue-laravel-blog/node_modules/@babel/core/lib/transformation/normalize-file.js:138:11)\n    at runSync (/opt/lampp/htdocs/vue-laravel-blog/node_modules/@babel/core/lib/transformation/index.js:44:43)\n    at runAsync (/opt/lampp/htdocs/vue-laravel-blog/node_modules/@babel/core/lib/transformation/index.js:35:14)\n    at process.nextTick (/opt/lampp/htdocs/vue-laravel-blog/node_modules/@babel/core/lib/transform.js:34:34)");
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      loading: true,
+      post: {
+        title: '',
+        body: '',
+        created_at: '',
+        user: {
+          name: ''
+        },
+        comments: {
+          post_id: '',
+          reply: '',
+          user: {
+            name: ''
+          },
+          parent_id: '',
+          token: ''
+        }
+      },
+      comment: {
+        post_id: this.$route.params.id,
+        reply: '',
+        parent_id: 0,
+        token: this.$store.getters.userToken
+      },
+      cmnt: {
+        id: ''
+      }
+    };
+  },
+  mounted: function mounted() {
+    this.fetchData();
+  },
+  methods: {
+    fetchData: function fetchData() {
+      var _this = this;
+
+      axios.get('/api/posts/' + this.$route.params.id).then(function (response) {
+        _this.post = response.data.data;
+        _this.loading = false;
+      })["catch"](function (err) {
+        console.log(err);
+      });
+    },
+    submitComment: function submitComment(e) {
+      e.preventDefault();
+      console.log(this.cmnt);
+      axios.post('/api/comments', this.comment).then(function (response) {
+        console.log(response);
+      })["catch"](function (err) {
+        console.log(err);
+      });
+    }
+  }
+});
 
 /***/ }),
 
@@ -68726,8 +68869,94 @@ var render = function() {
                 _vm._v(
                   "\n                " +
                     _vm._s(cmnt.reply) +
-                    "\n\n                "
+                    "\n                    "
                 ),
+                _c(
+                  "a",
+                  {
+                    staticClass: "btn btn-link",
+                    attrs: {
+                      "data-toggle": "collapse",
+                      href: "#multiCollapseExample" + cmnt.id,
+                      role: "button",
+                      "aria-expanded": "false",
+                      "aria-controls": "multiCollapseExample1"
+                    }
+                  },
+                  [_vm._v("Reply")]
+                ),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  {
+                    staticClass: "collapse multi-collapse",
+                    attrs: { id: "multiCollapseExample" + cmnt.id }
+                  },
+                  [
+                    _c("div", { staticClass: "card card-body" }, [
+                      _c("form", { on: { submit: _vm.submitComment } }, [
+                        _c("div", { staticClass: "form-group" }, [
+                          _c("textarea", {
+                            directives: [
+                              {
+                                name: "model",
+                                rawName: "v-model",
+                                value: _vm.comment.reply,
+                                expression: "comment.reply"
+                              }
+                            ],
+                            staticClass: "form-control",
+                            attrs: { rows: "3" },
+                            domProps: { value: _vm.comment.reply },
+                            on: {
+                              input: function($event) {
+                                if ($event.target.composing) {
+                                  return
+                                }
+                                _vm.$set(
+                                  _vm.comment,
+                                  "reply",
+                                  $event.target.value
+                                )
+                              }
+                            }
+                          }),
+                          _vm._v(" "),
+                          _c("input", {
+                            directives: [
+                              {
+                                name: "model",
+                                rawName: "v-model",
+                                value: cmnt.id,
+                                expression: "cmnt.id"
+                              }
+                            ],
+                            attrs: { type: "text" },
+                            domProps: { value: cmnt.id },
+                            on: {
+                              input: function($event) {
+                                if ($event.target.composing) {
+                                  return
+                                }
+                                _vm.$set(cmnt, "id", $event.target.value)
+                              }
+                            }
+                          })
+                        ]),
+                        _vm._v(" "),
+                        _c(
+                          "button",
+                          {
+                            staticClass: "btn btn-primary",
+                            attrs: { type: "submit" }
+                          },
+                          [_vm._v("Submit")]
+                        )
+                      ])
+                    ])
+                  ]
+                ),
+                _vm._v(" "),
                 _vm._l(cmnt.replies, function(reply) {
                   return _c(
                     "div",
@@ -68745,7 +68974,7 @@ var render = function() {
                         _vm._v(
                           "\n                        " +
                             _vm._s(reply.reply) +
-                            "\n                    "
+                            " \n                    "
                         )
                       ])
                     ]
@@ -68755,61 +68984,13 @@ var render = function() {
               2
             )
           ])
-        }),
-        _vm._v(" "),
-        _vm._m(0)
+        })
       ],
       2
     )
   ])
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "media mb-4" }, [
-      _c("img", {
-        staticClass: "d-flex mr-3 rounded-circle",
-        attrs: { src: "http://placehold.it/50x50", alt: "" }
-      }),
-      _vm._v(" "),
-      _c("div", { staticClass: "media-body" }, [
-        _c("h5", { staticClass: "mt-0" }, [_vm._v("Commenter Name")]),
-        _vm._v(
-          "\n                Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.\n\n                "
-        ),
-        _c("div", { staticClass: "media mt-4" }, [
-          _c("img", {
-            staticClass: "d-flex mr-3 rounded-circle",
-            attrs: { src: "http://placehold.it/50x50", alt: "" }
-          }),
-          _vm._v(" "),
-          _c("div", { staticClass: "media-body" }, [
-            _c("h5", { staticClass: "mt-0" }, [_vm._v("Commenter Name")]),
-            _vm._v(
-              "\n                    Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.\n                "
-            )
-          ])
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "media mt-4" }, [
-          _c("img", {
-            staticClass: "d-flex mr-3 rounded-circle",
-            attrs: { src: "http://placehold.it/50x50", alt: "" }
-          }),
-          _vm._v(" "),
-          _c("div", { staticClass: "media-body" }, [
-            _c("h5", { staticClass: "mt-0" }, [_vm._v("Commenter Name")]),
-            _vm._v(
-              "\n                    Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.\n                "
-            )
-          ])
-        ])
-      ])
-    ])
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 
 
@@ -85444,14 +85625,15 @@ __webpack_require__.r(__webpack_exports__);
 /*!****************************************************!*\
   !*** ./resources/js/pages/SinglePostComponent.vue ***!
   \****************************************************/
-/*! exports provided: default */
+/*! no static exports found */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _SinglePostComponent_vue_vue_type_template_id_253b705c_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./SinglePostComponent.vue?vue&type=template&id=253b705c&scoped=true& */ "./resources/js/pages/SinglePostComponent.vue?vue&type=template&id=253b705c&scoped=true&");
 /* harmony import */ var _SinglePostComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./SinglePostComponent.vue?vue&type=script&lang=js& */ "./resources/js/pages/SinglePostComponent.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport *//* harmony import */ var _SinglePostComponent_vue_vue_type_style_index_0_id_253b705c_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./SinglePostComponent.vue?vue&type=style&index=0&id=253b705c&scoped=true&lang=css& */ "./resources/js/pages/SinglePostComponent.vue?vue&type=style&index=0&id=253b705c&scoped=true&lang=css&");
+/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _SinglePostComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _SinglePostComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+/* harmony import */ var _SinglePostComponent_vue_vue_type_style_index_0_id_253b705c_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./SinglePostComponent.vue?vue&type=style&index=0&id=253b705c&scoped=true&lang=css& */ "./resources/js/pages/SinglePostComponent.vue?vue&type=style&index=0&id=253b705c&scoped=true&lang=css&");
 /* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
 
 
@@ -85483,7 +85665,7 @@ component.options.__file = "resources/js/pages/SinglePostComponent.vue"
 /*!*****************************************************************************!*\
   !*** ./resources/js/pages/SinglePostComponent.vue?vue&type=script&lang=js& ***!
   \*****************************************************************************/
-/*! exports provided: default */
+/*! no static exports found */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -85739,8 +85921,8 @@ var store = new vuex__WEBPACK_IMPORTED_MODULE_1__["default"].Store({
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /opt/lampp/htdocs/vue-laravel-blog/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /opt/lampp/htdocs/vue-laravel-blog/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /var/www/blog/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /var/www/blog/resources/sass/app.scss */"./resources/sass/app.scss");
 
 
 /***/ })
