@@ -9,6 +9,11 @@ use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware(['auth:api']);
+    }
+
     public function edit($token)
     {
         return response()->json(User::where('identification_token', $token)->first());

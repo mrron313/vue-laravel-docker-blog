@@ -24,6 +24,8 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+        \Laravel\Passport\Passport::withoutCookieSerialization();
+
         Blade::directive('upper', function ($expression) {
             return "<?php echo strtoupper($expression); ?>";
         });

@@ -11,6 +11,11 @@ use App\Http\Controllers\Controller;
 
 class PostController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware(['auth:api']);
+    }
+
     public function index()
     {
         $posts = Post::with('user:id,name,user_name')

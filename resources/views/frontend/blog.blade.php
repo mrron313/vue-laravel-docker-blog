@@ -46,6 +46,11 @@ crossorigin="anonymous"></script>
 
                 $.ajax({
                     url: '{{ route("api.user.devicetoken.save") }}',
+                    headers: {
+                        "X-CSRF-TOKEN" : '{{ csrf_token() }}',
+                        "Authorization": "Bearer " + "{{ Cookie::get('laravel_token') }}",
+                        'X-Requested-With': 'XMLHttpRequest',
+                    },
                     type: 'POST',
                     data: {
                         id: window.auth_user.id,
