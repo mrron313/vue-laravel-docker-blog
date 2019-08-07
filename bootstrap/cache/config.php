@@ -58,13 +58,13 @@
     'name' => 'Tech Blog',
     'env' => 'local',
     'debug' => true,
-    'url' => 'http://localhost',
+    'url' => 'http://localhost:4431/',
     'asset_url' => NULL,
     'timezone' => 'Asia/Dhaka',
     'locale' => 'en',
     'fallback_locale' => 'en',
     'faker_locale' => 'en_US',
-    'key' => 'base64:pgcfMcPz6oK4j/uc2U6egY7fZUP01ldjkH3tSGe5H50=',
+    'key' => 'base64:eSWBMs9/9YrIRSsMCTvMjUEzP1OQSuZmOmRIVZsSXtQ=',
     'cipher' => 'AES-256-CBC',
     'providers' => 
     array (
@@ -230,7 +230,7 @@
       'file' => 
       array (
         'driver' => 'file',
-        'path' => '/opt/lampp/htdocs/vue-laravel-blog/storage/framework/cache/data',
+        'path' => '/home/bs086/Desktop/vue-laravel-blog/storage/framework/cache/data',
       ),
       'memcached' => 
       array (
@@ -289,7 +289,7 @@
         'port' => '3306',
         'database' => 'laravel_blog',
         'username' => 'root',
-        'password' => '',
+        'password' => 'root',
         'unix_socket' => '',
         'charset' => 'utf8mb4',
         'collation' => 'utf8mb4_unicode_ci',
@@ -308,7 +308,7 @@
         'port' => '3306',
         'database' => 'laravel_blog',
         'username' => 'root',
-        'password' => '',
+        'password' => 'root',
         'charset' => 'utf8',
         'prefix' => '',
         'prefix_indexes' => true,
@@ -322,7 +322,7 @@
         'port' => '3306',
         'database' => 'laravel_blog',
         'username' => 'root',
-        'password' => '',
+        'password' => 'root',
         'charset' => 'utf8',
         'prefix' => '',
         'prefix_indexes' => true,
@@ -362,13 +362,13 @@
       'local' => 
       array (
         'driver' => 'local',
-        'root' => '/opt/lampp/htdocs/vue-laravel-blog/storage/app',
+        'root' => '/home/bs086/Desktop/vue-laravel-blog/storage/app',
       ),
       'public' => 
       array (
         'driver' => 'local',
-        'root' => '/opt/lampp/htdocs/vue-laravel-blog/storage/app/public',
-        'url' => 'http://localhost/storage',
+        'root' => '/home/bs086/Desktop/vue-laravel-blog/storage/app/public',
+        'url' => 'http://localhost:4431//storage',
         'visibility' => 'public',
       ),
       's3' => 
@@ -413,13 +413,13 @@
       'single' => 
       array (
         'driver' => 'single',
-        'path' => '/opt/lampp/htdocs/vue-laravel-blog/storage/logs/laravel.log',
+        'path' => '/home/bs086/Desktop/vue-laravel-blog/storage/logs/laravel.log',
         'level' => 'debug',
       ),
       'daily' => 
       array (
         'driver' => 'daily',
-        'path' => '/opt/lampp/htdocs/vue-laravel-blog/storage/logs/laravel.log',
+        'path' => '/home/bs086/Desktop/vue-laravel-blog/storage/logs/laravel.log',
         'level' => 'debug',
         'days' => 14,
       ),
@@ -483,7 +483,7 @@
       'theme' => 'default',
       'paths' => 
       array (
-        0 => '/opt/lampp/htdocs/vue-laravel-blog/resources/views/vendor/mail',
+        0 => '/home/bs086/Desktop/vue-laravel-blog/resources/views/vendor/mail',
       ),
     ),
     'log_channel' => NULL,
@@ -576,7 +576,7 @@
     'lifetime' => '120',
     'expire_on_close' => false,
     'encrypt' => false,
-    'files' => '/opt/lampp/htdocs/vue-laravel-blog/storage/framework/sessions',
+    'files' => '/home/bs086/Desktop/vue-laravel-blog/storage/framework/sessions',
     'connection' => NULL,
     'table' => 'sessions',
     'store' => NULL,
@@ -668,9 +668,9 @@
   array (
     'paths' => 
     array (
-      0 => '/opt/lampp/htdocs/vue-laravel-blog/resources/views',
+      0 => '/home/bs086/Desktop/vue-laravel-blog/resources/views',
     ),
-    'compiled' => '/opt/lampp/htdocs/vue-laravel-blog/storage/framework/views',
+    'compiled' => '/home/bs086/Desktop/vue-laravel-blog/storage/framework/views',
   ),
   'debugbar' => 
   array (
@@ -683,7 +683,7 @@
     array (
       'enabled' => true,
       'driver' => 'file',
-      'path' => '/opt/lampp/htdocs/vue-laravel-blog/storage/debugbar',
+      'path' => '/home/bs086/Desktop/vue-laravel-blog/storage/debugbar',
       'connection' => NULL,
       'provider' => '',
     ),
