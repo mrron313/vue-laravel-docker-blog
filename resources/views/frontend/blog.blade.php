@@ -37,12 +37,12 @@ crossorigin="anonymous"></script>
         messaging
             .requestPermission()
             .then(function () {
-                console.log("Notification permission granted.");
+                //console.log("Notification permission granted.");
                 
                 return messaging.getToken()
             })
             .then(function(token) {
-                console.log(token)
+               // console.log(token)
 
                 $.ajax({
                     url: '{{ route("api.user.devicetoken.save") }}',
@@ -58,17 +58,17 @@ crossorigin="anonymous"></script>
                     },
                     dataType: 'JSON',
                     success: function (response) { 
-                        console.log(response)
+                        //console.log(response)
                     }
                 }); 
 
             })
             .catch(function (err) {
-                console.log("Unable to get permission to notify.", err);
+               // console.log("Unable to get permission to notify.", err);
             });
     
         messaging.onMessage(function(payload) {
-            console.log("Message received. ", payload);
+            //console.log("Message received. ", payload);
             
             noteTitle = payload.notification.title; 
             noteOptions = {
@@ -76,7 +76,7 @@ crossorigin="anonymous"></script>
                 icon: payload.notification.icon, 
             };
         
-            console.log("title ",noteTitle, " ", payload.notification.body);
+           // console.log("title ",noteTitle, " ", payload.notification.body);
 
             new Notification(noteTitle, noteOptions);
         });
